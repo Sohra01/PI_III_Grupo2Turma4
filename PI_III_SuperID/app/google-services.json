@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313433015577",
+    "project_id": "pi3-superid",
+    "storage_bucket": "pi3-superid.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313433015577:android:4404f99eddf25d5d69f188",
+        "android_client_info": {
+          "package_name": "com.edu.puc.pi_iii_superid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa8GrHGLKZSP1i2vFY8q62hV8CF1orMo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
