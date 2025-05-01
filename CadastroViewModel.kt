@@ -4,7 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import br.edu.puc.testecadastropi.usuarioclass
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class CadastroViewModel : ViewModel()
@@ -50,6 +52,22 @@ class CadastroViewModel : ViewModel()
                 } else {
                     onError(task.exception?.message ?: "Erro desconhecido ao cadastrar.")
                 }
+            }
+    }
+
+    fun salvarUsuario(nome:String, email:String, senha:String)
+    {
+        val db = FirebaseFirestore.getInstance()
+
+        val usuariocadastro =  usuarioclass(nome,email,senha)
+
+        db.collection("usuarios")
+            .add(usuariocadastro)
+            .addOnSuccessListener { documentReference ->
+                println("Usuário adicionado com ID: ${documentReference.id}")
+            }
+            .addOnFailureListener{ e ->
+                println("Erro ao adicionar usuário: $e")
             }
     }
 
