@@ -13,6 +13,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -43,39 +44,40 @@ class cadastroActivity : ComponentActivity() {
 }
 
 @Composable
-fun Cadastro(viewModel: CadastroViewModel = viewModel())
-{
+fun Cadastro(viewModel: CadastroViewModel = viewModel()) {
     val context = LocalContext.current
-    Column (modifier = Modifier
-        .fillMaxSize(),
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         OutlinedTextField(
             value = viewModel.nomeF,
-            onValueChange = {viewModel.onFieldChange("nome",it)},
+            onValueChange = { viewModel.onFieldChange("nome", it) },
             label = { Text("Nome") },
             modifier = Modifier
                 .padding(bottom = 10.dp)
         )
         OutlinedTextField(
             value = viewModel.emailF,
-            onValueChange = {viewModel.onFieldChange("email",it)},
-            label = {Text("Email")},
+            onValueChange = { viewModel.onFieldChange("email", it) },
+            label = { Text("Email") },
             modifier = Modifier
                 .padding(top = 10.dp)
                 .padding(bottom = 10.dp)
         )
         OutlinedTextField(
             value = viewModel.senhaF,
-            onValueChange = {viewModel.onFieldChange("senha",it)},
-            label = {Text("Senha")},
+            onValueChange = { viewModel.onFieldChange("senha", it) },
+            label = { Text("Senha") },
             modifier = Modifier
                 .padding(top = 10.dp)
                 .padding(bottom = 10.dp)
         )
-        Button(onClick ={
+        Button(
+            onClick = {
                 viewModel.cadastrarUsuario(
                     email = viewModel.emailF,
                     senha = viewModel.senhaF,
@@ -90,30 +92,32 @@ fun Cadastro(viewModel: CadastroViewModel = viewModel())
                         Toast.makeText(context, erro, Toast.LENGTH_LONG).show()
                     }
                 )
+                viewModel.salvarUsuario(viewModel.nomeF, viewModel.emailF, viewModel.senhaF)
             },
             modifier = Modifier.padding(all = 16.dp),
             enabled = (viewModel.nomeF.isNotBlank() && viewModel.emailF.isNotBlank() && viewModel.senhaF.isNotBlank())
-            )
-            {Text("Realizar cadastro")
+        )
+        {
+            Text("Realizar cadastro")
         }
 
+        //isso aqui ta deletando só do auth, mas posso fazer deletar do firestore tambem pra testar
         Button(onClick = {
             FirebaseAuth.getInstance().currentUser?.delete()
                 ?.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(context, "Usuário deletado com sucesso!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(context, "Usuário deletado com sucesso!", Toast.LENGTH_LONG)
+                            .show()
                     } else {
-                        Toast.makeText(context, "Erro ao deletar usuário: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            context,
+                            "Erro ao deletar usuário: ${task.exception?.message}",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
         }) {
             Text("Deletar usuário logado")
         }
     }
-}
-
-@Preview
-@Composable
-fun PreviewCadastro(){
-    Cadastro()
 }
