@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -5,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace = "com.edu.puc.pi_iii_superid"
+    namespace = "com.example.superid"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.edu.puc.pi_iii_superid"
-        minSdk = 34
+        applicationId = "com.example.superid"
+        minSdk = 35
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -19,6 +20,7 @@ android {
     }
 
     buildTypes {
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -56,4 +58,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("androidx.compose.foundation:foundation:1.5.1")
+
+
+
 }
