@@ -58,9 +58,15 @@ fun LoginScreen(
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 
@@ -82,9 +88,15 @@ fun LoginScreen(
                         }
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 

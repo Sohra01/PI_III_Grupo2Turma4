@@ -57,9 +57,15 @@ fun SignUpScreen(
                     label = { Text("Nome", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 
@@ -71,9 +77,15 @@ fun SignUpScreen(
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 
@@ -95,9 +107,15 @@ fun SignUpScreen(
                         }
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 
@@ -119,9 +137,15 @@ fun SignUpScreen(
                         }
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.White,
                         focusedBorderColor = Color.White,
-                        cursorColor = Color.White
+                        unfocusedBorderColor = Color.White,
+                        cursorColor = Color.White,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        focusedLabelColor = Color.White,
+                        unfocusedLabelColor = Color.White,
+                        focusedTrailingIconColor = Color.White,
+                        unfocusedTrailingIconColor = Color.White
                     )
                 )
 

@@ -10,24 +10,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d3003ab-fa97-40c9-866d-5e00b096076e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/WelcomeScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/ResetPasswordScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/VerifiedMailScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/email_enviado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/email_verificado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_seta_direita.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/img_onboarding.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PI_III_SuperID.app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +98,24 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PI_III_GrupoH" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -75,44 +131,48 @@
     &quot;assignee&quot;: &quot;Sohra01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Sohra01/PI_III_GrupoH.git",
-    "accountId": "5de79c23-fd4d-45b2-859a-3beb79b6c6cf"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sohra01/PI_III_GrupoH.git&quot;,
+    &quot;accountId&quot;: &quot;5de79c23-fd4d-45b2-859a-3beb79b6c6cf&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2vK4NjTNiKPviWSpk2ZGf6iJYg6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "feature/cadastro",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Hugo/OneDrive/Documentos/GitHub/PI3_T4G2/PI_III_GrupoH/PI_III_SuperID/settings.gradle.kts",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.PI3-SuperID.executor&quot;: &quot;Run&quot;,
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/cadastro&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Hugo/OneDrive/Documentos/GitHub/PI3_T4G2/PI_III_GrupoH/PI_III_SuperID/settings.gradle.kts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration Language&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ga7ad\Documents\GitHub\PI_III_GrupoH\PI_III_SuperID\app\src\main\res\drawable" />
       <recent name="C:\Users\Hugo\OneDrive\Documentos\GitHub\PI3_T4G2\PI_III_GrupoH" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.PI3-SuperID">
+  <component name="RunManager" selected="Android App.app">
     <configuration name="PI3-SuperID" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="PI_III_SuperID.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -393,6 +453,78 @@
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="PI_III_GrupoH.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -427,6 +559,16 @@
         <entry key="com.edu.puc.pi_iii_superid.test">
           <value>
             <CheckInfo lastCheckTimestamp="1747176866908" />
+          </value>
+        </entry>
+        <entry key="com.example.superid">
+          <value>
+            <CheckInfo lastCheckTimestamp="1747243825317" />
+          </value>
+        </entry>
+        <entry key="com.example.superid.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1747243825314" />
           </value>
         </entry>
       </map>
