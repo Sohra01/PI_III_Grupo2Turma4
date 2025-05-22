@@ -23,7 +23,6 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    //pode ser que isso tenha que retornar booleano
     fun fazerLogin(email: String, senha: String, callback: (Boolean, String?) -> Unit) {
         FirebaseAuth.getInstance()
             .signInWithEmailAndPassword(email, senha)
