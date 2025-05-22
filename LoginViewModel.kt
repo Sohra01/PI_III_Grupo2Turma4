@@ -5,50 +5,43 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import br.edu.puc.testecadastropi.usuarioclass
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.flow.callbackFlow
 
-class LoginViewModel : ViewModel()
-{
+class LoginViewModel : ViewModel() {
     var emailP by mutableStateOf("")
         private set
 
     var senhaP by mutableStateOf("")
         private set
 
-    fun onFieldChange(field : String, texto : String)
-    {
-        when(field)
-        {
+    fun onFieldChange(field: String, texto: String) {
+        when (field) {
             "email" -> emailP = texto
             "senha" -> senhaP = texto
         }
     }
 
     //pode ser que isso tenha que retornar booleano
-    fun fazerLogin(email : String, senha : String, callback : (Boolean) -> Unit)
-    {
-        val db = FirebaseFirestore.getInstance()
-
-        db.collection("usuarios")
-            .get()
-            .addOnSuccessListener { result ->
-                if (!result.isEmpty){
-                    val usuario = result.documents[0].toObject(usuarioclass::class.java)
-
-                    if (usuario != null && usuario.senha == senha){
-                        callback(true)
+    fun fazerLogin(email: String, senha: String, callback: (Boolean, String?) -> Unit) {
+        FirebaseAuth.getInstance()
+            .signInWithEmailAndPassword(email, senha)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val user = FirebaseAuth.getInstance().currentUser
+                    if (user != null && user.isEmailVerified) {
+                        callback(true, null) // login OK
                     } else {
-                        callback(false)
-                        //senha incorreta
+                        callback(
+                            false,
+                            "E-mail não verificado. Verifique seu e-mail antes de fazer login."
+                        )
                     }
-                }else {
-                    callback(false)
-                    //nenhum usuário com o email
+                } else {
+                    val errorMessage = task.exception?.message ?: "Erro ao fazer login."
+                    callback(false, errorMessage)
                 }
-            }
-            .addOnFailureListener { e ->
-                println("Erro ao buscar usuário: $e")
             }
     }
 }
