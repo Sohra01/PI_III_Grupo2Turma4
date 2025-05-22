@@ -71,12 +71,12 @@ fun LoginUi(viewModel: LoginViewModel = viewModel())
     }
         Button(onClick = {
             //pode ser que isso tenha que retornar booleano
-            viewModel.fazerLogin(viewModel.emailP, viewModel.senhaP) {sucesso ->
+            viewModel.fazerLogin(viewModel.emailP, viewModel.senhaP) {sucesso, erro ->
                 if (sucesso) {
                     Toast.makeText(context, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show()
                     //aqui o intent pra próxima activity
                 } else{
-                    Toast.makeText(context,"Email ou senha inválidos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, erro ?: "Erro desconhecido", Toast.LENGTH_LONG).show()
                 }
             }
         },
