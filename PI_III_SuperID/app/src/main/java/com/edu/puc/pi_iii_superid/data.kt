@@ -5,7 +5,6 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-// 1. Extensão no Contexto da aplicação
 val Context.dataStore by preferencesDataStore("settings") // "settings" é o nome do arquivo gerado
 
 class PreferencesManager(private val context: Context) {

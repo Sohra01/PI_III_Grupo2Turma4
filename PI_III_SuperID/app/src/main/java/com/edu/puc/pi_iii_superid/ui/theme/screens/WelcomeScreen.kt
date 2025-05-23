@@ -12,7 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.superid.R
 
 @Composable
@@ -35,7 +37,7 @@ fun WelcomeScreen(
             ) {
                 Box(
                     modifier = Modifier
-                        .size(150.dp)
+                        .size(250.dp)
                         .clip(CircleShape)
                         .background(Color.White),
                     contentAlignment = Alignment.Center
@@ -43,7 +45,7 @@ fun WelcomeScreen(
                     Image(
                         painter = painterResource(id = R.drawable.superid_logo),
                         contentDescription = "Logo SuperID",
-                        modifier = Modifier.size(190.dp)
+                        modifier = Modifier.size(230.dp)
                     )
                 }
 
@@ -60,7 +62,7 @@ fun WelcomeScreen(
                         .height(50.dp),
                     elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
                 ) {
-                    Text("LOGIN", color = Color.White)
+                    Text("LOGIN", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -74,7 +76,7 @@ fun WelcomeScreen(
                         .height(50.dp),
                     elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
                 ) {
-                    Text("CADASTRO", color = Color.White)
+                    Text("CADASTRO", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold,)
                 }
             }
         }

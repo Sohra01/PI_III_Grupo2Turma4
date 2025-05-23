@@ -9,7 +9,6 @@
     import androidx.compose.runtime.getValue
     import androidx.compose.ui.Alignment
     import androidx.compose.ui.Modifier
-    import androidx.compose.ui.graphics.Color
     import androidx.compose.ui.text.font.FontWeight
     import androidx.compose.ui.unit.dp
     import androidx.compose.ui.text.style.TextAlign
@@ -17,11 +16,10 @@
     import androidx.compose.runtime.remember
     import androidx.compose.runtime.rememberCoroutineScope
     import androidx.compose.runtime.setValue
+    import androidx.compose.ui.graphics.Color
     import androidx.compose.ui.platform.LocalContext
     import androidx.compose.ui.unit.sp
     import androidx.navigation.NavController
-    import kotlinx.coroutines.CoroutineScope
-    import kotlinx.coroutines.Dispatchers
     import kotlinx.coroutines.launch
 
     @Composable
@@ -49,7 +47,7 @@
                 Card(
                     shape = RoundedCornerShape(24.dp),
                     elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF1E88E5)), // azul mais claro
+                    colors = CardDefaults.cardColors(containerColor = Color.White), // azul mais claro
                     modifier = Modifier.padding(bottom = 24.dp)
                 ) {
                     Column(
@@ -60,8 +58,9 @@
                     ) {
                         Text(
                             text = "TERMOS DE USO",
+                            fontSize = 18.sp,
                             style = MaterialTheme.typography.titleMedium.copy(
-                                color = Color.White,
+                                color = Color(0xFF1E88E5),
                                 fontWeight = FontWeight.Bold
                             ),
                             modifier = Modifier.padding(bottom = 16.dp)
@@ -69,7 +68,7 @@
     
                         val termsText = """
                             ACEITAÇÃO DOS TERMOS
-                            AO ACESSAR E UTILIZAR ESTE SITE, VOCÊ CONCORDA COM OS PRESENTES TERMOS DE USO.
+                            AO ACESSAR E UTILIZAR ESTE APLICATIVO, VOCÊ CONCORDA COM OS PRESENTES TERMOS DE USO.
     
                             USO PERMITIDO
                             VOCÊ SE COMPROMETE A UTILIZAR ESTE SITE APENAS PARA FINS LEGAIS E DE ACORDO COM ESTES TERMOS.
@@ -86,8 +85,8 @@
     
                         Text(
                             text = termsText,
-                            style = MaterialTheme.typography.bodySmall.copy(color = Color.White),
-                            fontSize = 9.sp,
+                            style = MaterialTheme.typography.bodySmall.copy(color = Color.Black),
+                            fontSize = 15.sp,
                             textAlign = TextAlign.Center
                         )
                     }
@@ -102,7 +101,8 @@
                         onCheckedChange = { isChecked = it },
                         colors = CheckboxDefaults.colors(
                             checkedColor = Color.White,
-                            checkmarkColor = Color(0xFF1E88E5)
+                            checkmarkColor = Color(0xFF1E88E5),
+                            uncheckedColor = Color.White
                         )
                     )
                     Text(
@@ -122,9 +122,10 @@
                         }
                     },
                     enabled = isChecked,
-                    modifier = Modifier.fillMaxWidth(0.6f)
+                    modifier = Modifier.fillMaxWidth(0.6f),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF03A9F4))
                 ) {
-                    Text("ACEITAR")
+                    Text("ACEITAR", color = Color.White)
                 }
 
             }

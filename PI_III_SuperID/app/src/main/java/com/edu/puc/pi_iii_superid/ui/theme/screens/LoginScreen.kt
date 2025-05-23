@@ -1,6 +1,6 @@
 package com.example.superid.ui.theme.screens
 
-import androidx.compose.foundation.Image
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,20 +12,24 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.superid.R
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import com.edu.puc.pi_iii_superid.data.LoginViewModel
 
 @Composable
 fun LoginScreen(
-    onLoginClick: () -> Unit,
+    viewModel: LoginViewModel = viewModel(),
+    navController: NavController,
     onSignUpClick: () -> Unit,
     onForgotPasswordClick: () -> Unit
 ) {
+    val context = LocalContext.current
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -45,7 +49,7 @@ fun LoginScreen(
             ) {
                 Text(
                     text = "LOGIN",
-                    fontSize = 32.sp,
+                    fontSize = 42.sp,
                     color = Color.White,
                     fontWeight = FontWeight.Bold
                 )
@@ -53,8 +57,8 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(32.dp))
 
                 OutlinedTextField(
-                    value = email,
-                    onValueChange = { email = it },
+                    value = viewModel.email.value,
+                    onValueChange = { viewModel.email.value = it },
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
@@ -73,8 +77,8 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 OutlinedTextField(
-                    value = password,
-                    onValueChange = { password = it },
+                    value = viewModel.senha.value,
+                    onValueChange = { viewModel.senha.value = it },
                     label = { Text("Senha Mestre", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -108,8 +112,9 @@ fun LoginScreen(
                 ) {
                     Text(
                         text = "Esqueci a senha",
+                        fontWeight = FontWeight.Bold,
                         color = Color.White,
-                        fontSize = 12.sp,
+                        fontSize = 15.sp,
                         modifier = Modifier.clickable { onForgotPasswordClick() }
                     )
                 }
@@ -117,7 +122,26 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Button(
-                    onClick = onLoginClick,
+                    onClick = {
+                        val senhaValida = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+\$").matches(viewModel.senha.value)
+                        if (!senhaValida) {
+                            Toast.makeText(
+                                context,
+                                "Senha inválida! Deve ter ao menos uma letra minúscula, uma maiúscula e um número",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            viewModel.loginUsuario(
+                                onSuccess = {
+                                    Toast.makeText(context, "Login realizado!", Toast.LENGTH_LONG).show()
+                                    navController.navigate("category")
+                                },
+                                onError = { erro ->
+                                    Toast.makeText(context, erro, Toast.LENGTH_LONG).show()
+                                }
+                            )
+                        }
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -125,7 +149,7 @@ fun LoginScreen(
                     shape = RoundedCornerShape(30.dp),
                     elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
                 ) {
-                    Text("ENTRAR", color = Color.White, fontWeight = FontWeight.Bold)
+                    Text("ENTRAR", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -136,7 +160,7 @@ fun LoginScreen(
                     Text(
                         "cadastrar",
                         color = Color.White,
-                        fontSize = 12.sp,
+                        fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.clickable { onSignUpClick() }
                     )
@@ -144,14 +168,6 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(80.dp))
 
             }
-            Image(
-                painter = painterResource(id = R.drawable.decoracao_login),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(300.dp)
-                    .align(Alignment.BottomStart)
-            )
-
         }
 
     }

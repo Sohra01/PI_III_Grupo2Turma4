@@ -1,5 +1,6 @@
 package com.edu.puc.pi_iii_superid.ui.theme.screens
 
+import PreferencesManager
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,10 +19,20 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Fullscreen
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.platform.LocalContext
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 
 @Composable
 fun GuideScreen(navController: NavController) {
+
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val preferencesManager = remember { PreferencesManager(context) }
+
     Spacer(modifier = Modifier.height(28.dp))
     Box(
         modifier = Modifier
@@ -36,8 +47,12 @@ fun GuideScreen(navController: NavController) {
                 .padding(horizontal = 24.dp, vertical = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
+            Spacer(modifier = Modifier.height(56.dp))
+
             Text(
                 text = "COMO USAR:",
+                fontSize = 30.sp,
                 style = MaterialTheme.typography.headlineSmall.copy(
                     color = Color(0xFF03A9F4),
                     fontWeight = FontWeight.Bold
@@ -45,7 +60,7 @@ fun GuideScreen(navController: NavController) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            TextosNumerados("1. Crie sua conta no app com seu nome,\n e-mail e uma senha mestre.")
+            TextosNumerados("1. Crie sua conta no app com seu nome, e-mail e uma senha mestre.")
             TextosNumerados("2. Crie suas senhas e categorias para acessar nossos sites e aplicativos parceiros, utilizando um ícone exatamente assim:")
             IconeCentral(Icons.Default.Add)
             TextosNumerados("3. E pronto, agora é só clicar no ícone de camera e escanear o QR-code na tela:")
@@ -66,10 +81,19 @@ fun GuideScreen(navController: NavController) {
             contentAlignment = Alignment.Center
         ) {
             Button(
-                onClick = { navController.navigate("termsofuse") },
+                onClick = {
+                    scope.launch {
+                        val aceitou = preferencesManager.termsAccepted.first()
+                        if (aceitou) {
+                            navController.popBackStack()
+                        } else {
+                            navController.navigate("termsofuse")
+                        }
+                    }
+                },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.White)
             ) {
-                Text("PROSSEGUIR", color = Color(0xFF03A9F4))
+                Text("PROSSEGUIR",fontSize = 20.sp, color = Color(0xFF03A9F4))
             }
         }
     }
@@ -81,8 +105,9 @@ fun TextosNumerados(texto: String) {
     Text(
         text = texto,
         color = Color(0xFF03A9F4),
+        fontSize = 24.sp,
         style = MaterialTheme.typography.bodyMedium.copy(
-            lineHeight = 20.sp
+            lineHeight = 25.sp
         ),
         modifier = Modifier
             .padding(vertical = 8.dp)
@@ -94,7 +119,7 @@ fun TextosNumerados(texto: String) {
 fun IconeCentral(icon: ImageVector) {
     Box(
         modifier = Modifier
-            .size(50.dp)
+            .size(70.dp)
             .background(Color(0xFF004A8F), shape = CircleShape),
         contentAlignment = Alignment.Center
     ) {
@@ -102,7 +127,7 @@ fun IconeCentral(icon: ImageVector) {
             imageVector = icon,
             contentDescription = null,
             tint = Color.White,
-            modifier = Modifier.size(24.dp)
+            modifier = Modifier.size(34.dp)
         )
     }
     Spacer(modifier = Modifier.height(8.dp))

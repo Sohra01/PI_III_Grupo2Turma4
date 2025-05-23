@@ -13,11 +13,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.superid.R
 import androidx.compose.foundation.Image
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 
 @Composable
 fun OnBoardingScreen(navController: NavController) {
@@ -48,7 +47,7 @@ fun OnBoardingScreen(navController: NavController) {
             Image(
                 painter = painterResource(id = R.drawable.superid_logo),
                 contentDescription = "Ícone de segurança",
-                modifier = Modifier.size(94.dp)
+                modifier = Modifier.size(180.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -61,44 +60,34 @@ fun OnBoardingScreen(navController: NavController) {
                 modifier = Modifier.padding(horizontal = 24.dp),
                 style = MaterialTheme.typography.bodyLarge.copy(
                     fontWeight = FontWeight.Medium,
-                    lineHeight = 22.sp
+                    lineHeight = 35.sp
                 )
             )
+
+            Spacer(modifier = Modifier.height(36.dp))
+
+            Button(
+                onClick = { navController.navigate("guide") },
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF03A9F4))
+            ) {
+                Text("PROSSEGUIR", color = Color.White)
+            }
         }
 
-        // Imagem com setas sobrepostas
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.9f)
+                .fillMaxHeight(0.7f)
+                .align(Alignment.End)
         ) {
-            // Imagem de fundo
             Image(
                 painter = painterResource(id = R.drawable.img_onboarding),
                 contentDescription = "Imagem do celular",
                 modifier = Modifier
                     .fillMaxSize()
-                    .align(Alignment.Center) // isso garante que a imagem fique centralizada
+                    .align(Alignment.Center)
             )
-
-
-            // Seta direita
-            IconButton(
-                onClick = {
-                    navController.navigate("guide")
-                },
-                modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .padding(end = 16.dp)
-            ) {
-                Icon(Icons.Filled.ArrowForward, contentDescription = "Seta direita", tint = Color.Black)
-            }
 
         }
     }
 }
-
-
-
-
-

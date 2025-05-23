@@ -1,6 +1,7 @@
 package com.example.superid.ui.theme.screens
 
 
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,22 +13,47 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import com.edu.puc.pi_iii_superid.data.CadastroViewModel
+
 
 @Composable
 fun SignUpScreen(
-    onSignUpClick: () -> Unit,
-    onLoginClick: () -> Unit
+    viewModel: CadastroViewModel = viewModel(),
+    navController: NavController
 ) {
-    var name by remember { mutableStateOf("") }
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+    val context = LocalContext.current
     var passwordVisible by remember { mutableStateOf(false) }
     var confirmPassword by remember { mutableStateOf("") }
+
+    fun traduzirErroFirebase(mensagem: String): String {
+        return when {
+            "email address is already in use" in mensagem.lowercase() -> "Este e-mail já está em uso."
+            "invalid email" in mensagem.lowercase() -> "E-mail inválido."
+            "password should be at least" in mensagem.lowercase() -> "A senha deve ter pelo menos 6 caracteres."
+            "network error" in mensagem.lowercase() -> "Sem conexão com a internet."
+            "user disabled" in mensagem.lowercase() -> "Esta conta foi desativada."
+            else -> "Erro ao cadastrar: $mensagem"
+        }
+    }
+
+    fun validarSenha(senha: String): String? {
+        val regex = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}$")
+
+        return if (!regex.matches(senha)) {
+            "A senha deve ter: uma letra maiúscula, uma minúscula e um número."
+        } else {
+            null // Senha válida
+        }
+    }
+
 
 
     Surface(
@@ -44,7 +70,7 @@ fun SignUpScreen(
             ) {
                 Text(
                     text = "CADASTRO",
-                    fontSize = 32.sp,
+                    fontSize = 42.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
@@ -52,8 +78,8 @@ fun SignUpScreen(
                 Spacer(modifier = Modifier.height(32.dp))
 
                 OutlinedTextField(
-                    value = name,
-                    onValueChange = { name = it },
+                    value = viewModel.nomeF,
+                    onValueChange = { viewModel.onFieldChange("nome", it) },
                     label = { Text("Nome", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
@@ -72,8 +98,8 @@ fun SignUpScreen(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 OutlinedTextField(
-                    value = email,
-                    onValueChange = { email = it },
+                    value = viewModel.emailF,
+                    onValueChange = { viewModel.onFieldChange("email", it) },
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     colors = OutlinedTextFieldDefaults.colors(
@@ -92,16 +118,16 @@ fun SignUpScreen(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 OutlinedTextField(
-                    value = password,
-                    onValueChange = { password = it },
-                    label = { Text("Senha Mestre", color = Color.White) },
+                    value = viewModel.senhaF,
+                    onValueChange = { viewModel.onFieldChange("senhaF", it) },
+                    label = { Text("Senha", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
                         IconButton(onClick = { passwordVisible = !passwordVisible }) {
                             Icon(
                                 imageVector = if (passwordVisible) Icons.Default.VisibilityOff else Icons.Default.Visibility,
-                                contentDescription = "Toggle Password",
+                                contentDescription = if (passwordVisible) "Ocultar senha" else "Mostrar senha",
                                 tint = Color.White
                             )
                         }
@@ -152,7 +178,46 @@ fun SignUpScreen(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Button(
-                    onClick = onSignUpClick,
+                    onClick = {
+
+                        if (viewModel.nomeF.isBlank() ||
+                            viewModel.emailF.isBlank() ||
+                            viewModel.senhaF.isBlank() ||
+                            confirmPassword.isBlank()
+                        ) {
+                            Toast.makeText(context, "Preencha todos os campos", Toast.LENGTH_LONG).show()
+                            return@Button
+                        }
+
+                        if (viewModel.senhaF != confirmPassword) {
+                            Toast.makeText(context, "As senhas não coincidem", Toast.LENGTH_LONG).show()
+                            return@Button
+                        }
+
+                        val erroSenha = validarSenha(viewModel.senhaF)
+                        if (erroSenha != null) {
+                            Toast.makeText(context, erroSenha, Toast.LENGTH_LONG).show()
+                            return@Button
+                        }
+
+
+                        viewModel.cadastrarUsuario(
+                            email = viewModel.emailF,
+                            senha = viewModel.senhaF,
+                            onSuccess = {
+                                Toast.makeText(
+                                    context,
+                                    "Cadastro realizado. Realize seu login!",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                navController.navigate("login")
+                            },
+                            onError = { erro ->
+                                val mensagem = traduzirErroFirebase(erro)
+                                Toast.makeText(context, mensagem, Toast.LENGTH_LONG).show()
+                            }
+                        )
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -160,7 +225,7 @@ fun SignUpScreen(
                     shape = RoundedCornerShape(30.dp),
                     elevation = ButtonDefaults.buttonElevation(8.dp)
                 ) {
-                    Text("CADASTRAR", color = Color.White, fontWeight = FontWeight.Bold)
+                    Text("CADASTRAR", color = Color.White, fontWeight = FontWeight.Bold,  fontSize = 20.sp)
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -174,9 +239,9 @@ fun SignUpScreen(
                     Text(
                         text = "login",
                         color = Color.White,
-                        fontSize = 12.sp,
+                        fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.clickable { onLoginClick() }
+                        modifier = Modifier.clickable { navController.navigate("login") }
                     )
                 }
             }

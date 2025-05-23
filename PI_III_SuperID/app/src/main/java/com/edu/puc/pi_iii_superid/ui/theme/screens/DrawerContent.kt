@@ -13,10 +13,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.superid.R
+import com.google.firebase.auth.FirebaseAuth
 
 @Composable
-fun DrawerContent(onClose: () -> Unit) {
+fun DrawerContent(onClose: () -> Unit, navController: NavController) {
+
+    val user = FirebaseAuth.getInstance().currentUser
+    val nome = user?.displayName ?: "Usuário"
+    val email = user?.email ?: "E-mail não disponível"
+
     Column(
         modifier = Modifier
             .fillMaxHeight()
@@ -32,6 +39,7 @@ fun DrawerContent(onClose: () -> Unit) {
             }
         }
 
+        Spacer(modifier = Modifier.height(40.dp))
         // Avatar
         Icon(
             painter = painterResource(id = R.drawable.ic_user), // substitua pelo seu drawable
@@ -41,14 +49,14 @@ fun DrawerContent(onClose: () -> Unit) {
         )
 
         Spacer(modifier = Modifier.height(8.dp))
-        Text("NOME USER", fontWeight = FontWeight.Bold)
-        Text("Email", color = Color.Gray)
+        Text(nome.uppercase(), fontWeight = FontWeight.Bold)
+        Text(email, color = Color.Gray)
 
-        Spacer(modifier = Modifier.height(240.dp))
+        Spacer(modifier = Modifier.height(500.dp))
 
         // Botões
         Button(
-            onClick = { /* Ação do botão Guia */ },
+            onClick = { navController.navigate("guide") },
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
             shape = RoundedCornerShape(50),
             modifier = Modifier
@@ -59,14 +67,14 @@ fun DrawerContent(onClose: () -> Unit) {
         }
 
         Button(
-            onClick = { /* Ação de logout */ },
+            onClick = { FirebaseAuth.getInstance().signOut(); navController.navigate("login")},
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8F0000)),
             shape = RoundedCornerShape(50),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 4.dp)
         ) {
-            Text("LOG OUT", color = Color.White)
+            Text("SAIR", color = Color.White)
         }
     }
 }

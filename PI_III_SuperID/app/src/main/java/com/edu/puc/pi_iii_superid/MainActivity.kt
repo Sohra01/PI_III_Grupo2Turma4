@@ -6,13 +6,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -23,17 +18,17 @@ import com.edu.puc.pi_iii_superid.ui.theme.PI_III_SuperIDTheme
 import com.edu.puc.pi_iii_superid.ui.theme.screens.CreateOrEditCategoryScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.CreateOrEditPasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.GuideScreen
+import com.edu.puc.pi_iii_superid.ui.theme.screens.LoadingScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.OnBoardingScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.PasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.RecoveryMailScreen
-import com.edu.puc.pi_iii_superid.ui.theme.screens.ResetPasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.SendMailScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.TermsOfUseScreen
-import com.edu.puc.pi_iii_superid.ui.theme.screens.VerifiedMailScreen
 import com.example.superid.ui.theme.screens.CategoryScreen
 import com.example.superid.ui.theme.screens.LoginScreen
 import com.example.superid.ui.theme.screens.SignUpScreen
 import com.example.superid.ui.theme.screens.WelcomeScreen
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,15 +42,17 @@ class MainActivity : ComponentActivity() {
                 val preferencesManager = remember { PreferencesManager(context) }
                 val termsAcceptedState = preferencesManager.termsAccepted.collectAsState(initial = null)
                 val termsAccepted by preferencesManager.termsAccepted.collectAsState(initial = false)
-                val startDestination = if (termsAccepted) "welcome" else "onboarding"
+                val user = FirebaseAuth.getInstance().currentUser
 
-                if (termsAcceptedState.value == null) {
-                    // Dado ainda não carregou — mostra uma tela de carregamento (pode ser só uma Box simples)
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
-                    }
-                } else {
+                // Determina a tela inicial com base no estado do usuário
+                val startDestination = when {
+                    termsAcceptedState.value == null -> "loading"
+                    user != null && user.isEmailVerified -> "category"
+                    termsAccepted -> "welcome"
+                    else -> "onboarding"
+                }
 
+                if (startDestination != null) {
                     NavHost(navController = navController, startDestination = startDestination) {
                         composable("welcome") {
                             WelcomeScreen(
@@ -65,9 +62,7 @@ class MainActivity : ComponentActivity() {
                         }
                         composable("login") {
                             LoginScreen(
-                                onLoginClick = {
-                                    navController.navigate("category")
-                                },
+                                navController = navController,
                                 onSignUpClick = {
                                     navController.navigate("signup") //
                                 },
@@ -77,61 +72,99 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable("signup") {
-                            SignUpScreen(
-                                onSignUpClick = { navController.navigate("login") },
-                                onLoginClick = { navController.navigate("login") }
-                            )
+                            SignUpScreen(navController = navController)
                         }
                         composable("category") {
                             CategoryScreen(navController)
                         }
                         composable(
-                            "CreateOrEditCategoryScreen?isEdit={isEdit}",
-                            arguments = listOf(navArgument("isEdit") {
-                                defaultValue = true
-                                type = NavType.BoolType
-                            })
-                        ) {
-                            val isEdit = it.arguments?.getBoolean("isEdit") != false
+                            route = "CreateOrEditCategoryScreen?isEdit={isEdit}&categoriaId={categoriaId}&nome={nome}",
+                            arguments = listOf(
+                                navArgument("isEdit") { defaultValue = false; type = NavType.BoolType },
+                                navArgument("categoriaId") { defaultValue = ""; type = NavType.StringType },
+                                navArgument("nome") { defaultValue = ""; type = NavType.StringType }
+                            )
+                        ) { backStackEntry ->
+                            val isEdit = backStackEntry.arguments?.getBoolean("isEdit") ?: false
+                            val categoriaId = backStackEntry.arguments?.getString("categoriaId")
+                            val nome = backStackEntry.arguments?.getString("nome") ?: ""
+
                             CreateOrEditCategoryScreen(
                                 navController = navController,
-                                isEdit = isEdit
+                                isEdit = isEdit,
+                                categoriaId = categoriaId,
+                                nomeCategoriaInicial = nome
                             )
                         }
-                        composable("passwords/{categoria}") { backStackEntry ->
-                            val categoria = backStackEntry.arguments?.getString("categoria") ?: ""
-                            PasswordScreen(navController, categoria)
-                        }
+
                         composable(
-                            "CreateOrEditPasswordScreen?isEdit={isEdit}",
-                            arguments = listOf(navArgument("isEdit") {
-                                defaultValue = true
-                                type = NavType.BoolType
-                            })
-                        ) {
-                            val isEdit = it.arguments?.getBoolean("isEdit") != false
+                            route = "passwords/{categoriaId}/{categoriaNome}",
+                            arguments = listOf(
+                                navArgument("categoriaId") { type = NavType.StringType },
+                                navArgument("categoriaNome") { type = NavType.StringType }
+                            )
+                        ) { backStackEntry ->
+                            val categoriaId = backStackEntry.arguments?.getString("categoriaId") ?: ""
+                            val categoriaNome = backStackEntry.arguments?.getString("categoriaNome") ?: ""
+
+                            PasswordScreen(
+                                navController = navController,
+                                categoriaNome = categoriaNome,
+                                categoria = categoriaId
+
+                            )
+                        }
+
+
+                        composable(
+                            "CreateOrEditPasswordScreen?isEdit={isEdit}&categoria={categoria}&categoriaNome={categoriaNome}&senhaId={senhaId}",
+                            arguments = listOf(
+                                navArgument("isEdit") {
+                                    type = NavType.BoolType
+                                    defaultValue = false
+                                },
+                                navArgument("categoria") {
+                                    type = NavType.StringType
+                                    defaultValue = "Site"
+                                },
+                                navArgument("categoriaNome") {
+                                    type = NavType.StringType
+                                    defaultValue = "Site"
+                                },
+                                navArgument("senhaId") {
+                                    type = NavType.StringType
+                                    defaultValue = ""
+                                    nullable = true
+                                }
+                            )
+                        ) { backStackEntry ->
+                            val isEdit = backStackEntry.arguments?.getBoolean("isEdit") ?: false
+                            val categoria = backStackEntry.arguments?.getString("categoria") ?: "Site"
+                            val categoriaNome = backStackEntry.arguments?.getString("categoriaNome") ?: "Site"
+                            val senhaId = backStackEntry.arguments?.getString("senhaId")
+
                             CreateOrEditPasswordScreen(
                                 navController = navController,
-                                isEdit = isEdit
+                                isEdit = isEdit,
+                                categoria = categoria,
+                                categoriaNome = categoriaNome,
+                                senhaId = senhaId
                             )
                         }
-                        composable("sendmail") {
-                            SendMailScreen(navController)
+
+
+                        composable(
+                            "sendmail/{email}",
+                            arguments = listOf(navArgument("email") { type = NavType.StringType })
+                        ) { backStackEntry ->
+                            val email = backStackEntry.arguments?.getString("email") ?: ""
+                            SendMailScreen(navController, email)
                         }
+
                         composable("recoverymail") {
-                            RecoveryMailScreen(
-                                navController,
-                                onEnviarClick = { navController.navigate("sendmail") })
+                            RecoveryMailScreen(navController)
                         }
-                        composable("resetpassword") {
-                            ResetPasswordScreen(
-                                onSalvarClick = { navController.navigate("login") },
-                                onCancelarClick = { navController.navigate("login") }
-                            )
-                        }
-                        composable("virifiedmail") {
-                            VerifiedMailScreen(onProsseguirClick = { navController.navigate("resetpassword") })
-                        }
+
                         composable("onboarding") {
                             OnBoardingScreen(navController)
                         }
@@ -141,8 +174,14 @@ class MainActivity : ComponentActivity() {
                         composable("termsofuse") {
                             TermsOfUseScreen(navController, preferencesManager)
                         }
+                        composable("loading") {
+                            LoadingScreen()
+                        }
 
                     }
+
+                } else {
+                    LoadingScreen()
                 }
             }
         }

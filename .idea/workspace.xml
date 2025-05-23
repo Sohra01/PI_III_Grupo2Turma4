@@ -10,38 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d3003ab-fa97-40c9-866d-5e00b096076e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/ic_launcher-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/ResetPasswordScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/VerifiedMailScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/email_enviado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/email_verificado.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_seta_direita.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/img_onboarding.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/PI_III_SuperID.app.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/CryptoUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/LoginData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/SignUpData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoadingScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" afterDir="false" />
@@ -52,26 +24,26 @@
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/google-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/ResetPasswordScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/VerifiedMailScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/WelcomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/WelcomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/superid_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/superid_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +53,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\ga7ad\.android\avd\Small_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\ga7ad\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/PI_III_SuperID">
       <ProjectState />
@@ -145,29 +117,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.PI3-SuperID.executor&quot;: &quot;Run&quot;,
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/cadastro&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Hugo/OneDrive/Documentos/GitHub/PI3_T4G2/PI_III_GrupoH/PI_III_SuperID/settings.gradle.kts&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration Language&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.PI3-SuperID.executor": "Run",
+    "Android App.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "feature/cadastro",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ga7ad/Documents/GitHub/PI_III_GrupoH/PI_III_SuperID/app",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration Language"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ga7ad\Documents\GitHub\PI_III_GrupoH\PI_III_SuperID\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ga7ad\Documents\GitHub\PI_III_GrupoH\PI_III_SuperID\app\src\main\java\com\edu\puc\pi_iii_superid" />
+      <recent name="C:\Users\ga7ad\Documents\GitHub\PI_III_GrupoH\PI_III_SuperID\app" />
       <recent name="C:\Users\ga7ad\Documents\GitHub\PI_III_GrupoH\PI_III_SuperID\app\src\main\res\drawable" />
       <recent name="C:\Users\Hugo\OneDrive\Documentos\GitHub\PI3_T4G2\PI_III_GrupoH" />
     </key>
@@ -563,12 +540,12 @@
         </entry>
         <entry key="com.example.superid">
           <value>
-            <CheckInfo lastCheckTimestamp="1747243825317" />
+            <CheckInfo lastCheckTimestamp="1747853676146" />
           </value>
         </entry>
         <entry key="com.example.superid.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1747243825314" />
+            <CheckInfo lastCheckTimestamp="1747853677347" />
           </value>
         </entry>
       </map>
