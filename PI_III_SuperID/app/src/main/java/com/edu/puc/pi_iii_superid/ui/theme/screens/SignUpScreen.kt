@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.*
@@ -17,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -120,7 +122,12 @@ fun SignUpScreen(
                 OutlinedTextField(
                     value = viewModel.senhaF,
                     onValueChange = { viewModel.onFieldChange("senhaF", it) },
-                    label = { Text("Senha", color = Color.White) },
+                    label = {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text("Senha", color = Color.White)
+                            Spacer(modifier = Modifier.width(4.dp))
+                        }
+                    },
                     modifier = Modifier.fillMaxWidth(),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
@@ -145,7 +152,15 @@ fun SignUpScreen(
                     )
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(6.dp))
+
+                Row(
+                    horizontalArrangement = Arrangement.Absolute.Left,
+                    modifier = Modifier.fillMaxWidth()
+                ){
+                    Text("Regra de Senha", color = Color.White)
+                    RegrasSenhaInfo()
+                }
 
                 OutlinedTextField(
                     value = confirmPassword,
@@ -207,7 +222,7 @@ fun SignUpScreen(
                             onSuccess = {
                                 Toast.makeText(
                                     context,
-                                    "Cadastro realizado. Realize seu login!",
+                                    "Email Enviado. Valide seu email para entrar!",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 navController.navigate("login")
@@ -245,6 +260,48 @@ fun SignUpScreen(
                     )
                 }
             }
+        }
+    }
+}
+
+
+@Composable
+fun RegrasSenhaInfo() {
+    var expanded by remember { mutableStateOf(false) }
+
+    Box {
+        Icon(
+            imageVector = Icons.Default.Info,
+            contentDescription = "Mostrar regras da senha",
+            tint = Color.White,
+            modifier = Modifier
+                .size(24.dp)
+                .clickable { expanded = true }
+        )
+
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            offset = DpOffset(x = 0.dp, y = 4.dp),
+            modifier = Modifier.width(250.dp)
+        ) {
+            DropdownMenuItem(
+                onClick = { expanded = false },
+                text = { Text("Regras da senha:", fontWeight = FontWeight.Bold, color = Color.Black) }
+            )
+            DropdownMenuItem(
+                onClick = { expanded = false },
+                text = { Text("- Uma letra minúscula", color = Color.Black) }
+            )
+            DropdownMenuItem(
+                onClick = { expanded = false },
+                text = { Text("- Uma letra maiúscula", color = Color.Black) }
+            )
+            DropdownMenuItem(
+                onClick = { expanded = false },
+                text = { Text("- Um número", color = Color.Black) }
+            )
+
         }
     }
 }

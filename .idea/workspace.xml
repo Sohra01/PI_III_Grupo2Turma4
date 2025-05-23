@@ -10,10 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d3003ab-fa97-40c9-866d-5e00b096076e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/CryptoUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/LoginData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data/SignUpData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoadingScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PI_III_GrupoH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PI_III_GrupoH.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/md5-checksums.bin" afterDir="false" />
@@ -23,27 +24,12 @@
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/data.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CategoryScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditCategoryScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/CreateOrEditPasswordScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/DrawerContent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/GuideScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/LoginScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/OnBoardingScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/PasswordScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/RecoveryMailScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/ResetPasswordScreen.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SendMailScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/SignUpScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/TermsOfUseScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/VerifiedMailScreen.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/WelcomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/java/com/edu/puc/pi_iii_superid/ui/theme/screens/WelcomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/superid_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/app/src/main/res/drawable/superid_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +39,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\ga7ad\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\24012009\.android\avd\Medium_Phone_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/PI_III_SuperID">
       <ProjectState />
@@ -129,13 +115,15 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "feature/cadastro",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ga7ad/Documents/GitHub/PI_III_GrupoH/PI_III_SuperID/app",
+    "last_opened_file_path": "C:/Users/24012009/Documents/GitHub/PI_III_GrupoH",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration Language"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Gradle Declarative Configuration Language",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -152,7 +140,6 @@
   <component name="RunManager" selected="Android App.app">
     <configuration name="PI3-SuperID" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="PI_III_SuperID.app" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -160,14 +147,12 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="true" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="RESTORE_ENABLED" value="false" />
       <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -214,7 +199,6 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
@@ -222,7 +206,6 @@
     </configuration>
     <configuration name="PI_III_SuperID.app.androidTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="PI_III_SuperID.app.androidTest" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -230,14 +213,12 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="RESTORE_ENABLED" value="false" />
       <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -284,7 +265,6 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
@@ -292,7 +272,6 @@
     </configuration>
     <configuration name="PI_III_SuperID.app.main" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="PI_III_SuperID.app.main" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -300,14 +279,12 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="RESTORE_ENABLED" value="false" />
       <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -354,7 +331,6 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
@@ -362,7 +338,6 @@
     </configuration>
     <configuration name="PI_III_SuperID.app.unitTest" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="PI_III_SuperID.app.unitTest" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -370,14 +345,12 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="RESTORE_ENABLED" value="false" />
       <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -424,15 +397,13 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="PI_III_GrupoH.app" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <module name="PI_III_GrupoH.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -440,14 +411,12 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="RESTORE_ENABLED" value="false" />
       <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -494,7 +463,6 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />

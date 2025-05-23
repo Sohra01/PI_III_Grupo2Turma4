@@ -1,5 +1,6 @@
 package com.edu.puc.pi_iii_superid.ui.theme.screens
 
+import android.widget.Button
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -288,13 +289,16 @@ fun CreateOrEditPasswordScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
+                    var isButtonEnabled:Boolean = true;
+
                     Button(
                         onClick = {
-
                             if (senha.value.isBlank()) {
                                 Toast.makeText(context, "A senha não pode estar vazia", Toast.LENGTH_LONG).show()
                                 return@Button
                             }
+
+                            isButtonEnabled = false
 
                             salvarSenha(
                                 firestore = firestore,
@@ -317,7 +321,9 @@ fun CreateOrEditPasswordScreen(
                                     generateBase64Token()
                                 }
                             )
+                            navController.popBackStack()
                         },
+                        enabled = isButtonEnabled,
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
                         shape = RoundedCornerShape(50),
                         modifier = Modifier.weight(1f)

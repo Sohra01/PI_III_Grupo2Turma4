@@ -79,7 +79,7 @@ fun LoginScreen(
                 OutlinedTextField(
                     value = viewModel.senha.value,
                     onValueChange = { viewModel.senha.value = it },
-                    label = { Text("Senha Mestre", color = Color.White) },
+                    label = { Text("Senha", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
