@@ -27,8 +27,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
-import com.edu.puc.pi_iii_superid.data.startQrCodeScanner
 import com.edu.puc.pi_iii_superid.ui.theme.screens.DrawerContent
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
@@ -48,6 +48,7 @@ fun CategoryScreen(navController: NavController) {
     val auth = FirebaseAuth.getInstance()
     val firestore = FirebaseFirestore.getInstance()
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
 
     var categorias by remember { mutableStateOf<List<Categoria>>(emptyList()) }
     var loading by remember { mutableStateOf(true) }
@@ -129,7 +130,7 @@ fun CategoryScreen(navController: NavController) {
             },
             floatingActionButton = {
                 FloatingActionButton(
-                    onClick = { startQrCodeScanner(context) },
+                    onClick = { navController.navigate("camera") },
                     containerColor = Color(0xFF004A8F),
                     shape = RoundedCornerShape(50),
                     modifier = Modifier

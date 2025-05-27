@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.edu.puc.pi_iii_superid.ui.theme.PI_III_SuperIDTheme
+import com.edu.puc.pi_iii_superid.ui.theme.screens.CameraScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.CreateOrEditCategoryScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.CreateOrEditPasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.GuideScreen
@@ -176,6 +177,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable("loading") {
                             LoadingScreen()
+                        }
+                        composable("camera") {
+                            CameraScreen(navController)
                         }
 
                     }

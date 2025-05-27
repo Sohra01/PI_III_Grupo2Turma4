@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "com.example.superid"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.superid"
-        minSdk = 35
-        targetSdk = 35
+        minSdk = 34
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -80,6 +80,8 @@ dependencies {
 
     // ML Kit para leitura de QR Code
     implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    implementation ("com.google.accompanist:accompanist-permissions:<latest_version>")
+    implementation ("com.google.accompanist:accompanist-permissions:0.30.1")
 
 }
 

@@ -55,6 +55,7 @@ async function fetchQRCode() {
       remainingSeconds--;
       updateTimerUI();
       if (remainingSeconds <= 0) {
+        clearInterval(countdownInterval);
         alert("Tempo esgotado. Por favor, gere um novo QR Code.");
         closeModal();
       }
