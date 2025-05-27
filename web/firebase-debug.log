@@ -1,0 +1,875 @@
+[debug] [2025-05-26T23:16:51.360Z] ----------------------------------------------------------------------
+[debug] [2025-05-26T23:16:51.363Z] Command:       C:\node\node.exe C:\node\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2025-05-26T23:16:51.363Z] CLI Version:   14.4.0
+[debug] [2025-05-26T23:16:51.363Z] Platform:      win32
+[debug] [2025-05-26T23:16:51.363Z] Node Version:  v22.16.0
+[debug] [2025-05-26T23:16:51.363Z] Time:          Mon May 26 2025 20:16:51 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-05-26T23:16:51.364Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-26T23:16:51.579Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-26T23:16:51.579Z] > authorizing via signed-in user (adorno7117@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting, extensions"}}
+[debug] [2025-05-26T23:16:51.583Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:51.583Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:51.584Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/super-6a237/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-05-26T23:16:51.584Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/super-6a237/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/super-6a237
+[debug] [2025-05-26T23:16:52.691Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/super-6a237/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-05-26T23:16:52.692Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/super-6a237/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-05-26T23:16:52.692Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:52.692Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:52.692Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/super-6a237 [none]
+[debug] [2025-05-26T23:16:53.636Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/super-6a237 200
+[debug] [2025-05-26T23:16:53.637Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/super-6a237 {"projectNumber":"1004752914839","projectId":"super-6a237","lifecycleState":"ACTIVE","name":"super-id","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-05-21T18:53:51.741380Z"}
+[debug] [2025-05-26T23:16:53.678Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-05-26T23:16:53.678Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-05-26T23:16:53.678Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-05-26T23:16:53.685Z] [hub] writing locator at C:\Users\ga7ad\AppData\Local\Temp\hub-super-6a237.json
+[debug] [2025-05-26T23:16:53.693Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-05-26T23:16:53.702Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-05-26T23:16:53.702Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-05-26T23:16:53.703Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-05-26T23:16:53.703Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-05-26T23:16:53.716Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-26T23:16:53.718Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[debug] [2025-05-26T23:16:53.718Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:53.718Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:53.718Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/adminSdkConfig [none]
+[debug] [2025-05-26T23:16:54.118Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/adminSdkConfig 200
+[debug] [2025-05-26T23:16:54.118Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/adminSdkConfig {"projectId":"super-6a237","storageBucket":"super-6a237.firebasestorage.app"}
+[debug] [2025-05-26T23:16:54.162Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:54.162Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:54.162Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/super-6a237/sites 
+[debug] [2025-05-26T23:16:55.708Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/super-6a237/sites 200
+[debug] [2025-05-26T23:16:55.708Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/super-6a237/sites {"sites":[{"name":"projects/super-6a237/sites/super-6a237","defaultUrl":"https://super-6a237.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-05-26T23:16:55.709Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:55.710Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:55.710Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/webApps/-/config [none]
+[debug] [2025-05-26T23:16:56.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/webApps/-/config 200
+[debug] [2025-05-26T23:16:56.630Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237/webApps/-/config {"projectId":"super-6a237","appId":"1:1004752914839:web:93f0f1ed524e37cc4e1cd2","storageBucket":"super-6a237.firebasestorage.app","apiKey":"AIzaSyDqJ6QCVln0vbltsGHi8BOaS8vGf_6PSW4","authDomain":"super-6a237.firebaseapp.com","messagingSenderId":"1004752914839","measurementId":"G-CB7032GWTK"}
+[debug] [2025-05-26T23:16:56.643Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:56.643Z] Checked if tokens are valid: true, expires at: 1748304624688
+[debug] [2025-05-26T23:16:56.644Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237 [none]
+[debug] [2025-05-26T23:16:57.013Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237 200
+[debug] [2025-05-26T23:16:57.013Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/super-6a237 {"projectId":"super-6a237","projectNumber":"1004752914839","displayName":"super-id","name":"projects/super-6a237","resources":{"hostingSite":"super-6a237"},"state":"ACTIVE","etag":"1_205e2c14-3846-4af2-8f6f-7ac9e2bc936e"}
+[info] i  hosting[super-6a237]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[super-6a237]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[info] i  ui: downloading ui-v1.15.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.15.0.zip..."}}
+[debug] [2025-05-26T23:16:57.071Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 
+[debug] [2025-05-26T23:16:57.167Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 200
+[debug] [2025-05-26T23:16:57.167Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip [stream]
+[debug] [2025-05-26T23:16:57.599Z] Data is 3538469
+[debug] [2025-05-26T23:16:57.599Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.599Z] [unzip] Processing entry: client\
+[debug] [2025-05-26T23:16:57.599Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\
+[debug] [2025-05-26T23:16:57.600Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2025-05-26T23:16:57.600Z] [unzip] Processing entry: client\favicon-16x16.png
+[debug] [2025-05-26T23:16:57.600Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.601Z] [unzip] Writing file: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\favicon-16x16.png
+[debug] [2025-05-26T23:16:57.602Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2025-05-26T23:16:57.602Z] [unzip] Processing entry: client\safari-pinned-tab.svg
+[debug] [2025-05-26T23:16:57.602Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.603Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\safari-pinned-tab.svg
+[debug] [2025-05-26T23:16:57.608Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2025-05-26T23:16:57.608Z] [unzip] Processing entry: client\favicon.ico
+[debug] [2025-05-26T23:16:57.608Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.609Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\favicon.ico
+[debug] [2025-05-26T23:16:57.611Z] [unzip] Entry: client/index.html (compressed_size=1364 bytes, uncompressed_size=3071 bytes)
+[debug] [2025-05-26T23:16:57.611Z] [unzip] Processing entry: client\index.html
+[debug] [2025-05-26T23:16:57.611Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.611Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\index.html
+[debug] [2025-05-26T23:16:57.613Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2025-05-26T23:16:57.613Z] [unzip] Processing entry: client\android-chrome-192x192.png
+[debug] [2025-05-26T23:16:57.613Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.613Z] [unzip] Writing file: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\android-chrome-192x192.png
+[debug] [2025-05-26T23:16:57.614Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2025-05-26T23:16:57.614Z] [unzip] Processing entry: client\apple-touch-icon.png
+[debug] [2025-05-26T23:16:57.615Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.615Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\apple-touch-icon.png
+[debug] [2025-05-26T23:16:57.618Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2025-05-26T23:16:57.619Z] [unzip] Processing entry: client\android-chrome-512x512.png
+[debug] [2025-05-26T23:16:57.619Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.619Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\android-chrome-512x512.png
+[debug] [2025-05-26T23:16:57.621Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2025-05-26T23:16:57.621Z] [unzip] Processing entry: client\manifest.json
+[debug] [2025-05-26T23:16:57.621Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.621Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\manifest.json
+[debug] [2025-05-26T23:16:57.623Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2025-05-26T23:16:57.623Z] [unzip] Processing entry: client\robots.txt
+[debug] [2025-05-26T23:16:57.623Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.624Z] [unzip] Writing file: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\robots.txt
+[debug] [2025-05-26T23:16:57.625Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2025-05-26T23:16:57.625Z] [unzip] Processing entry: client\mstile-150x150.png
+[debug] [2025-05-26T23:16:57.625Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.625Z] [unzip] Writing file: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\mstile-150x150.png
+[debug] [2025-05-26T23:16:57.626Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.626Z] [unzip] Processing entry: client\assets\
+[debug] [2025-05-26T23:16:57.626Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\
+[debug] [2025-05-26T23:16:57.627Z] [unzip] Entry: client/assets/index-BX-A56oj.js (compressed_size=582089 bytes, uncompressed_size=2092775 bytes)
+[debug] [2025-05-26T23:16:57.627Z] [unzip] Processing entry: client\assets\index-BX-A56oj.js
+[debug] [2025-05-26T23:16:57.627Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-05-26T23:16:57.628Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-BX-A56oj.js
+[debug] [2025-05-26T23:16:57.645Z] [unzip] Entry: client/assets/index-CjB9C900.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2025-05-26T23:16:57.645Z] [unzip] Processing entry: client\assets\index-CjB9C900.css
+[debug] [2025-05-26T23:16:57.645Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-05-26T23:16:57.645Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-CjB9C900.css
+[debug] [2025-05-26T23:16:57.648Z] [unzip] Entry: client/assets/index-BX-A56oj.js.map (compressed_size=2362482 bytes, uncompressed_size=10036679 bytes)
+[debug] [2025-05-26T23:16:57.648Z] [unzip] Processing entry: client\assets\index-BX-A56oj.js.map
+[debug] [2025-05-26T23:16:57.648Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets
+[debug] [2025-05-26T23:16:57.649Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\index-BX-A56oj.js.map
+[debug] [2025-05-26T23:16:57.703Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.703Z] [unzip] Processing entry: client\assets\extensions\
+[debug] [2025-05-26T23:16:57.703Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions\
+[debug] [2025-05-26T23:16:57.704Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2025-05-26T23:16:57.704Z] [unzip] Processing entry: client\assets\extensions\default-extension.png
+[debug] [2025-05-26T23:16:57.704Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions
+[debug] [2025-05-26T23:16:57.704Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\extensions\default-extension.png
+[debug] [2025-05-26T23:16:57.705Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.705Z] [unzip] Processing entry: client\assets\img\
+[debug] [2025-05-26T23:16:57.705Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\img\
+[debug] [2025-05-26T23:16:57.708Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2025-05-26T23:16:57.708Z] [unzip] Processing entry: client\assets\img\database.png
+[debug] [2025-05-26T23:16:57.708Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\img
+[debug] [2025-05-26T23:16:57.708Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\img\database.png
+[debug] [2025-05-26T23:16:57.710Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.710Z] [unzip] Processing entry: client\assets\provider-icons\
+[debug] [2025-05-26T23:16:57.710Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\
+[debug] [2025-05-26T23:16:57.710Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2025-05-26T23:16:57.710Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_saml.svg
+[debug] [2025-05-26T23:16:57.710Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.711Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_saml.svg
+[debug] [2025-05-26T23:16:57.712Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2025-05-26T23:16:57.712Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_phone.svg
+[debug] [2025-05-26T23:16:57.712Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.713Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_phone.svg
+[debug] [2025-05-26T23:16:57.714Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2025-05-26T23:16:57.714Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2025-05-26T23:16:57.714Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.715Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_facebook.svg
+[debug] [2025-05-26T23:16:57.716Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2025-05-26T23:16:57.717Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2025-05-26T23:16:57.717Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.718Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_game_center.svg
+[debug] [2025-05-26T23:16:57.719Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2025-05-26T23:16:57.720Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_apple.svg
+[debug] [2025-05-26T23:16:57.720Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.720Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_apple.svg
+[debug] [2025-05-26T23:16:57.721Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2025-05-26T23:16:57.722Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_github.svg
+[debug] [2025-05-26T23:16:57.722Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.722Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_github.svg
+[debug] [2025-05-26T23:16:57.724Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2025-05-26T23:16:57.724Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2025-05-26T23:16:57.724Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.724Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_mslive.svg
+[debug] [2025-05-26T23:16:57.727Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2025-05-26T23:16:57.727Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2025-05-26T23:16:57.727Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.728Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_yahoo.svg
+[debug] [2025-05-26T23:16:57.729Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2025-05-26T23:16:57.729Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2025-05-26T23:16:57.729Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.730Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_twitter.svg
+[debug] [2025-05-26T23:16:57.731Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2025-05-26T23:16:57.731Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2025-05-26T23:16:57.732Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.734Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_play_games.svg
+[debug] [2025-05-26T23:16:57.736Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2025-05-26T23:16:57.736Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_email.svg
+[debug] [2025-05-26T23:16:57.736Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.736Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_email.svg
+[debug] [2025-05-26T23:16:57.738Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2025-05-26T23:16:57.738Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_google.svg
+[debug] [2025-05-26T23:16:57.739Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.739Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_google.svg
+[debug] [2025-05-26T23:16:57.740Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2025-05-26T23:16:57.740Z] [unzip] Processing entry: client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2025-05-26T23:16:57.741Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons
+[debug] [2025-05-26T23:16:57.741Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\assets\provider-icons\auth_service_oidc.svg
+[debug] [2025-05-26T23:16:57.743Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2025-05-26T23:16:57.743Z] [unzip] Processing entry: client\browserconfig.xml
+[debug] [2025-05-26T23:16:57.743Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.744Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\browserconfig.xml
+[debug] [2025-05-26T23:16:57.745Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2025-05-26T23:16:57.745Z] [unzip] Processing entry: client\favicon-32x32.png
+[debug] [2025-05-26T23:16:57.745Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client
+[debug] [2025-05-26T23:16:57.746Z] [unzip] Writing file: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\client\favicon-32x32.png
+[debug] [2025-05-26T23:16:57.747Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2025-05-26T23:16:57.747Z] [unzip] Processing entry: server\
+[debug] [2025-05-26T23:16:57.747Z] [unzip] mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\server\
+[debug] [2025-05-26T23:16:57.749Z] [unzip] Entry: server/server.mjs.map (compressed_size=217845 bytes, uncompressed_size=944978 bytes)
+[debug] [2025-05-26T23:16:57.749Z] [unzip] Processing entry: server\server.mjs.map
+[debug] [2025-05-26T23:16:57.749Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\server
+[debug] [2025-05-26T23:16:57.749Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\server\server.mjs.map
+[debug] [2025-05-26T23:16:57.772Z] [unzip] Entry: server/server.mjs (compressed_size=276407 bytes, uncompressed_size=933701 bytes)
+[debug] [2025-05-26T23:16:57.772Z] [unzip] Processing entry: server\server.mjs
+[debug] [2025-05-26T23:16:57.772Z] [unzip] else mkdir: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\server
+[debug] [2025-05-26T23:16:57.772Z] [unzip] deflating: C:\Users\ga7ad\.cache\firebase\emulators\ui-v1.15.0\server\server.mjs
+[debug] [2025-05-26T23:16:57.782Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "C:\Users\ga7ad\Desktop\teste pi\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\" for Cloud Functions..."}}
+[debug] [2025-05-26T23:16:57.791Z] Validating nodejs source
+[debug] [2025-05-26T23:16:58.628Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-26T23:16:58.628Z] Building nodejs source
+[debug] [2025-05-26T23:16:58.628Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-26T23:16:58.631Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-26T23:16:58.641Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8272
+
+[debug] [2025-05-26T23:17:00.952Z] Got response from /__/functions.yaml {"endpoints":{"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-26T23:17:04.992Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-26T23:17:04.998Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: performAuth."}}
+[info] +  functions[us-central1-performAuth]: http function initialized (http://127.0.0.1:5001/super-6a237/us-central1/performAuth). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/super-6a237/us-central1/performAuth)."}}
+[debug] [2025-05-26T23:17:05.004Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator   │ Host:Port      │ View in Emulator UI              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Functions  │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Hosting    │ 127.0.0.1:5000 │ n/a                              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:17:05 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:17:05 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:17:05 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:17:05 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:17:06 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:17:06 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:19:04 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:19:04 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[debug] [2025-05-26T23:19:46.569Z] [work-queue] {"queuedWork":["/super-6a237/us-central1/performAuth-2025-05-26T23:19:46.569Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-05-26T23:19:46.569Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/super-6a237/us-central1/performAuth-2025-05-26T23:19:46.569Z"],"workRunningCount":1}
+[debug] [2025-05-26T23:19:46.569Z] Accepted request POST /super-6a237/us-central1/performAuth --> us-central1-performAuth
+[debug] [2025-05-26T23:19:46.570Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-05-26T23:19:46.570Z] [functions] Got req.url=/super-6a237/us-central1/performAuth, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/super-6a237/us-central1/performAuth, mapping to path=/"}}
+[debug] [2025-05-26T23:19:46.580Z] [worker-pool] addWorker(us-central1-performAuth) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-performAuth)"}}
+[debug] [2025-05-26T23:19:46.581Z] [worker-pool] Adding worker with key us-central1-performAuth, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-performAuth, total=1"}}
+[debug] [2025-05-26T23:19:47.811Z] [runtime-status] [16616] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:47.812Z] [runtime-status] [16616] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:47.812Z] [runtime-status] [16616] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-05-26T23:19:47.813Z] [runtime-status] [16616] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:48.217Z] [runtime-status] [16616] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-05-26T23:19:48.217Z] [runtime-status] [16616] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.3.2","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}}"}}
+[debug] [2025-05-26T23:19:48.218Z] [runtime-status] [16616] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:48.228Z] [runtime-status] [16616] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:48.230Z] [runtime-status] [16616] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2025-05-26T23:19:48.231Z] [runtime-status] [16616] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2025-05-26T23:19:48.416Z] [runtime-status] [16616] initializeApp(DEFAULT) {"storageBucket":"super-6a237.firebasestorage.app","projectId":"super-6a237"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] initializeApp(DEFAULT) {\"storageBucket\":\"super-6a237.firebasestorage.app\",\"projectId\":\"super-6a237\"}"}}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"The Cloud Firestore emulator is not running, so calls to Firestore will affect production."}}
+[debug] [2025-05-26T23:19:48.432Z] [runtime-status] [16616] Functions runtime initialized. {"cwd":"C:\\Users\\ga7ad\\Desktop\\teste pi\\functions","node_version":"22.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\ga7ad\\\\Desktop\\\\teste pi\\\\functions\",\"node_version\":\"22.16.0\"}"}}
+[debug] [2025-05-26T23:19:48.432Z] [runtime-status] [16616] Listening to port: \\?\pipe\fire_emu_48f57dea8a46a5c9 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[runtime-status] [16616] Listening to port: \\\\?\\pipe\\fire_emu_48f57dea8a46a5c9"}}
+[debug] [2025-05-26T23:19:48.520Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE"}}
+[debug] [2025-05-26T23:19:48.520Z] [worker-pool] submitRequest(triggerId=us-central1-performAuth) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-performAuth)"}}
+[info] i  functions: Beginning execution of "us-central1-performAuth" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Beginning execution of \"us-central1-performAuth\""}}
+[debug] [2025-05-26T23:19:48.521Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: BUSY"}}
+[warn] !  Google API requested!
+   - URL: "https://oauth2.googleapis.com/token"
+   - Be careful, this may be a production service. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Google API requested!\n   - URL: \"https://oauth2.googleapis.com/token\"\n   - Be careful, this may be a production service."}}
+[debug] [2025-05-26T23:19:49.722Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-performAuth" in 1200.78ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finished \"us-central1-performAuth\" in 1200.78ms"}}
+[debug] [2025-05-26T23:19:49.723Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE"}}
+[debug] [2025-05-26T23:19:49.723Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-05-26T23:19:49.723Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-05-26T23:19:49.723Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-05-26T23:20:10.499Z] [work-queue] {"queuedWork":["/super-6a237/us-central1/performAuth-2025-05-26T23:20:10.499Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-05-26T23:20:10.500Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/super-6a237/us-central1/performAuth-2025-05-26T23:20:10.499Z"],"workRunningCount":1}
+[debug] [2025-05-26T23:20:10.500Z] Accepted request POST /super-6a237/us-central1/performAuth --> us-central1-performAuth
+[debug] [2025-05-26T23:20:10.500Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-05-26T23:20:10.500Z] [functions] Got req.url=/super-6a237/us-central1/performAuth, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/super-6a237/us-central1/performAuth, mapping to path=/"}}
+[debug] [2025-05-26T23:20:10.500Z] [worker-pool] submitRequest(triggerId=us-central1-performAuth) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-performAuth)"}}
+[info] i  functions: Beginning execution of "us-central1-performAuth" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Beginning execution of \"us-central1-performAuth\""}}
+[debug] [2025-05-26T23:20:10.501Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: BUSY"}}
+[debug] [2025-05-26T23:20:10.772Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-performAuth" in 271.4729ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finished \"us-central1-performAuth\" in 271.4729ms"}}
+[debug] [2025-05-26T23:20:10.773Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: IDLE"}}
+[debug] [2025-05-26T23:20:10.773Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-05-26T23:20:10.773Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-05-26T23:20:10.773Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:21:26 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:21:26 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:21:26 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:21:26 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:22:04 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:22:04 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:22:46 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:22:46 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:23:05 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:23:05 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:23:05 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:23:05 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:16 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:16 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:16 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:16 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:16 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:16 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:16 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:16 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:22 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:22 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:24:22 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:24:22 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:35:56 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:35:56 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:35:56 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:35:56 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [26/May/2025:23:35:56 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [26/May/2025:23:35:56 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[debug] [2025-05-27T00:48:48.460Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:48:49.489Z] Validating nodejs source
+[debug] [2025-05-27T00:48:50.985Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:48:50.986Z] Building nodejs source
+[debug] [2025-05-27T00:48:50.986Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:48:50.990Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:48:51.004Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:48:51.012Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8166
+
+[debug] [2025-05-27T00:48:52.016Z] Validating nodejs source
+[debug] [2025-05-27T00:48:53.084Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:48:53.085Z] Building nodejs source
+[debug] [2025-05-27T00:48:53.085Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:48:53.086Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:48:53.089Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:48:53.099Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8298
+
+[debug] [2025-05-27T00:48:54.006Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:48:57.127Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:48:57.128Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:48:57.129Z] [worker-pool] Shutting down IDLE worker (us-central1-performAuth) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-performAuth)"}}
+[debug] [2025-05-27T00:48:57.129Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: FINISHING"}}
+[info] +  functions[us-central1-getLoginStatus]: http function initialized (http://127.0.0.1:5001/super-6a237/us-central1/getLoginStatus). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/super-6a237/us-central1/getLoginStatus)."}}
+[debug] [2025-05-27T00:48:57.140Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: exited"}}
+[debug] [2025-05-27T00:48:57.140Z] [worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-performAuth"},"extension":{},"message":"[worker-us-central1-performAuth-28ee6ef5-f5c2-4071-a5db-c6d1599ff4e1]: FINISHED"}}
+[debug] [2025-05-27T00:48:58.038Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:48:58.038Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:29.086Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:30.097Z] Validating nodejs source
+[debug] [2025-05-27T00:53:30.969Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:30.969Z] Building nodejs source
+[debug] [2025-05-27T00:53:30.969Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:30.970Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:30.981Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:30.987Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8103
+
+[debug] [2025-05-27T00:53:31.861Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:31.876Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:32.886Z] Validating nodejs source
+[debug] [2025-05-27T00:53:33.748Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:33.748Z] Building nodejs source
+[debug] [2025-05-27T00:53:33.748Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:33.750Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:33.759Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:33.764Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8178
+
+[debug] [2025-05-27T00:53:34.586Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:34.773Z] Validating nodejs source
+[debug] [2025-05-27T00:53:35.652Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:35.653Z] Building nodejs source
+[debug] [2025-05-27T00:53:35.653Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:35.656Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:35.665Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:35.668Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:35.880Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:35.882Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[info] Serving at port 8387
+
+[debug] [2025-05-27T00:53:36.508Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:36.680Z] Validating nodejs source
+[debug] [2025-05-27T00:53:37.656Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:37.656Z] Building nodejs source
+[debug] [2025-05-27T00:53:37.656Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:37.658Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:37.668Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:37.673Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8422
+
+[debug] [2025-05-27T00:53:38.528Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:38.623Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:38.625Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:38.687Z] Validating nodejs source
+[debug] [2025-05-27T00:53:39.528Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:39.528Z] Building nodejs source
+[debug] [2025-05-27T00:53:39.528Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:39.529Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:39.539Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:39.545Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8003
+
+[debug] [2025-05-27T00:53:40.389Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:40.541Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:40.542Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:40.548Z] Validating nodejs source
+[debug] [2025-05-27T00:53:41.401Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:41.401Z] Building nodejs source
+[debug] [2025-05-27T00:53:41.401Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:41.402Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:41.412Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:41.417Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8009
+
+[debug] [2025-05-27T00:53:42.277Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:42.427Z] Validating nodejs source
+[debug] [2025-05-27T00:53:43.269Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:43.269Z] Building nodejs source
+[debug] [2025-05-27T00:53:43.269Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:43.270Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:43.282Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:43.287Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:43.289Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:43.293Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[info] Serving at port 8173
+
+[debug] [2025-05-27T00:53:44.083Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:44.143Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:44.408Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:44.409Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:45.089Z] Validating nodejs source
+[debug] [2025-05-27T00:53:45.983Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:45.984Z] Building nodejs source
+[debug] [2025-05-27T00:53:45.984Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:45.986Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:45.998Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:46.146Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[info] Serving at port 8806
+
+[debug] [2025-05-27T00:53:46.300Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:46.301Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:46.844Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:47.161Z] Validating nodejs source
+[debug] [2025-05-27T00:53:48.022Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:48.023Z] Building nodejs source
+[debug] [2025-05-27T00:53:48.023Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:48.024Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:48.032Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[debug] [2025-05-27T00:53:48.037Z] File C:\Users\ga7ad\Desktop\teste pi\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\ga7ad\\Desktop\\teste pi\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-05-27T00:53:48.163Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:48.166Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[info] Serving at port 8378
+
+[debug] [2025-05-27T00:53:48.826Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:49.052Z] Validating nodejs source
+[debug] [2025-05-27T00:53:49.896Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-05-27T00:53:49.896Z] Building nodejs source
+[debug] [2025-05-27T00:53:49.896Z] Failed to find version of module node: reached end of search path C:\Users\ga7ad\Desktop\teste pi\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2025-05-27T00:53:49.897Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-05-27T00:53:49.910Z] Found firebase-functions binary at 'C:\Users\ga7ad\Desktop\teste pi\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8463
+
+[debug] [2025-05-27T00:53:50.740Z] Got response from /__/functions.yaml {"endpoints":{"getLoginStatus":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getLoginStatus"},"performAuth":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"performAuth"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-05-27T00:53:50.895Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:50.896Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:52.875Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:52.876Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[debug] [2025-05-27T00:53:54.770Z] defaultcredentials: writing to file C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json
+[debug] [2025-05-27T00:53:54.771Z] Setting GAC to C:\Users\ga7ad\AppData\Roaming\firebase\adorno7117_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\ga7ad\\AppData\\Roaming\\firebase\\adorno7117_gmail_com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getLoginStatus, performAuth. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getLoginStatus, performAuth."}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:02:22 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:02:22 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:02:22 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:02:22 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:02:22 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:02:22 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:02:22 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:02:22 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:08 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:08 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:08 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:08 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:08 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:08 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:08 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:08 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:09 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:09 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:06:09 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:06:09 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:07:49 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:07:49 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:07:49 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:07:49 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:08:54 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:08:54 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:08:54 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:08:54 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:08:59 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:08:59 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:12:09 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:12:09 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:12:09 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:12:09 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:12:10 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:12:10 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:13:38 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:13:38 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:13:38 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:13:38 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:34:17 +0000] "GET /home HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:34:17 +0000] \"GET /home HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:34:17 +0000] "GET /login.js HTTP/1.1" 200 - "http://127.0.0.1:5000/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:34:17 +0000] \"GET /login.js HTTP/1.1\" 200 - \"http://127.0.0.1:5000/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}
+[info] i  hosting: 127.0.0.1 - - [27/May/2025:01:34:18 +0000] "GET /favicon.ico HTTP/1.1" 304 - "http://127.0.0.1:5000/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [27/May/2025:01:34:18 +0000] \"GET /favicon.ico HTTP/1.1\" 304 - \"http://127.0.0.1:5000/home\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 OPR/118.0.0.0\""}}

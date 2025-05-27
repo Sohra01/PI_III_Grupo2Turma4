@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.edu.puc.pi_iii_superid.data.startQrCodeScanner
 import com.edu.puc.pi_iii_superid.ui.theme.screens.DrawerContent
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
@@ -128,7 +129,7 @@ fun CategoryScreen(navController: NavController) {
             },
             floatingActionButton = {
                 FloatingActionButton(
-                    onClick = { /* Botão central */ },
+                    onClick = { startQrCodeScanner(context) },
                     containerColor = Color(0xFF004A8F),
                     shape = RoundedCornerShape(50),
                     modifier = Modifier
