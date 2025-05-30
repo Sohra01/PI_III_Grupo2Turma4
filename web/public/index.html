@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0066cc;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .divider {
+      margin: 30px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .super-id-button {
+      background-color: #555;
+    }
+
+    .super-id-button:hover {
+      background-color: #333;
+    }
+
+  #qr-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #qr-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+
+  #qr-content-box {
+    background-color: #000;
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #qr-code-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  #qr-timer {
+    color: white;
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+
+    <input type="email" placeholder="Email" id="email" />
+    <input type="password" placeholder="Senha" id="senha" />
+
+    <button onclick="login()">Entrar</button>
+
+    <div class="divider"></div>
+
+    <button class="super-id-button" id="btn-login">Logar com Super ID</button>
+
+  </div>
+
+  <div id="qr-modal">
+  <div id="qr-modal-close">&times;</div>
+  
+  <div id="qr-content-box">
+    <div id="qr-code-image"></div>
+    <p id="qr-timer"></p>
+  </div>
+</div>
+
+  
+
+<script type="module" src="login.js"></script>
+
+</body>
+</html>
