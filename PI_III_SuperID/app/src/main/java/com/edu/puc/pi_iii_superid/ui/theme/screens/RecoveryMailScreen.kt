@@ -24,103 +24,83 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 @Composable
 fun RecoveryMailScreen(
-    navController: NavHostController // Controlador de navegação para troca de telas
+    navController: NavHostController
 ) {
-    val context = LocalContext.current // Contexto atual para mostrar Toasts
-    var email by remember { mutableStateOf("") } // Estado que armazena o texto do email digitado
+    val context = LocalContext.current
+    var email by remember { mutableStateOf("") }
 
-    // Função que verifica no Firestore se o email existe e se está verificado
-    fun verificarEmailNoFirestore(
-        email: String,
-        context: Context,
-        onPodeRecuperar: () -> Unit, // Callback para caso o email esteja verificado e possa recuperar senha
-        onEmailNaoVerificado: () -> Unit, // Callback para email não verificado
-        onNaoExiste: () -> Unit // Callback para email que não existe no banco
-    ) {
-        val db = FirebaseFirestore.getInstance() // Instância do Firestore
-        db.collection("usuarios") // Coleção "usuarios"
-            .whereEqualTo("email", email) // Filtra pelo email informado
+    fun verificarEmailNoFirestore(email: String, context: Context, onExiste: () -> Unit, onNaoExiste: () -> Unit) {
+        val db = FirebaseFirestore.getInstance()
+        db.collection("usuarios")
+            .whereEqualTo("email", email)
             .get()
             .addOnSuccessListener { result ->
-                if (!result.isEmpty) { // Se encontrou algum documento com esse email
-                    val usuario = result.documents.first() // Pega o primeiro usuário encontrado
-                    val emailVerificado = usuario.getBoolean("emailVerificado") ?: false // Verifica campo "emailVerificado"
-
-                    if (emailVerificado) {
-                        onPodeRecuperar() // Chama callback para permitir recuperação
-                    } else {
-                        onEmailNaoVerificado() // Chama callback para email não verificado
-                    }
+                if (!result.isEmpty) {
+                    onExiste()
                 } else {
-                    onNaoExiste() // Chama callback para email não encontrado
+                    onNaoExiste()
                 }
             }
             .addOnFailureListener {
-                Toast.makeText(context, "Erro ao verificar e-mail", Toast.LENGTH_SHORT).show() // Toast em caso de erro na consulta
+                Toast.makeText(context, "Erro ao verificar e-mail", Toast.LENGTH_SHORT).show()
             }
     }
 
-    // Função que envia o link de recuperação de senha pelo Firebase Auth
     fun enviarLinkDeRecuperacao(email: String, context: Context) {
         val auth = FirebaseAuth.getInstance()
 
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(context, "Link enviado para o e-mail!", Toast.LENGTH_LONG).show() // Sucesso no envio
+                    Toast.makeText(context, "Link enviado para o e-mail!", Toast.LENGTH_LONG).show()
                 } else {
                     val errorMsg = task.exception?.message ?: "Erro desconhecido"
-                    Toast.makeText(context, "Erro: $errorMsg", Toast.LENGTH_LONG).show() // Exibe mensagem de erro detalhada
+                    Toast.makeText(context, "Erro: $errorMsg", Toast.LENGTH_LONG).show()
                 }
             }
     }
 
-    // Função chamada ao clicar no botão "ENVIAR"
     fun onEnviarClick(email: String) {
         verificarEmailNoFirestore(
             email,
             context,
-            onPodeRecuperar = {
-                enviarLinkDeRecuperacao(email, context) // Se permitido, envia email de recuperação
-                navController.navigate("sendmail/${email}") // Navega para tela de confirmação de envio
-            },
-            onEmailNaoVerificado = {
-                Toast.makeText(context, "E-mail não verificado. Verifique sua caixa de entrada.", Toast.LENGTH_LONG).show() // Feedback ao usuário
+            onExiste = {
+                enviarLinkDeRecuperacao(email, context)
+                navController.navigate("sendmail/${email}")
             },
             onNaoExiste = {
-                Toast.makeText(context, "E-mail não encontrado", Toast.LENGTH_SHORT).show() // Feedback ao usuário
+                Toast.makeText(context, "E-mail não encontrado", Toast.LENGTH_SHORT).show()
             }
         )
     }
 
-    // UI da tela
+
+
     Box(
         modifier = Modifier
-            .fillMaxSize() // Preenche toda tela
-            .background(Color(0xFF0096FF)) // Fundo azul similar à imagem referenciada
+            .fillMaxSize()
+            .background(Color(0xFF0096FF)) // azul semelhante à imagem
             .padding(24.dp),
-        contentAlignment = Alignment.Center // Centraliza conteúdo dentro da Box
+        contentAlignment = Alignment.Center
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally, // Centraliza elementos da coluna horizontalmente
-            modifier = Modifier.fillMaxWidth() // Ocupa toda a largura possível
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth()
         ) {
-            // Título principal da tela
             Text(
                 text = "EMAIL PARA RECUPERAÇÃO\nDE SENHA",
                 color = Color.White,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(bottom = 40.dp) // Espaço abaixo do texto
+                modifier = Modifier.padding(bottom = 40.dp)
             )
 
-            // Campo de texto para o usuário digitar o email
             OutlinedTextField(
                 value = email,
-                onValueChange = { email = it }, // Atualiza o estado ao digitar
-                placeholder = { Text("Email", color = Color.White.copy(alpha = 0.7f)) }, // Texto de dica com transparência
-                singleLine = true, // Linha única
+                onValueChange = { email = it },
+                placeholder = { Text("Email", color = Color.White.copy(alpha = 0.7f)) },
+                singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),
@@ -135,14 +115,13 @@ fun RecoveryMailScreen(
                     focusedTrailingIconColor = Color.White,
                     unfocusedTrailingIconColor = Color.White
                 ),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email) // Teclado otimizado para email
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
             )
 
-            Spacer(modifier = Modifier.height(40.dp)) // Espaço entre o campo e o botão
+            Spacer(modifier = Modifier.height(40.dp))
 
-            // Botão para enviar o link de recuperação
             Button(
-                onClick = { onEnviarClick(email) }, // Chama a função ao clicar
+                onClick = { onEnviarClick(email) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
@@ -158,11 +137,10 @@ fun RecoveryMailScreen(
                 )
             }
 
-            Spacer(modifier = Modifier.height(30.dp)) // Espaço antes do botão "Voltar"
+            Spacer(modifier = Modifier.height(30.dp))
 
-            // Botão para voltar à tela anterior
             Button(
-                onClick = { navController.popBackStack() }, // Volta uma tela na navegação
+                onClick = { navController.popBackStack() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
@@ -180,3 +158,4 @@ fun RecoveryMailScreen(
         }
     }
 }
+

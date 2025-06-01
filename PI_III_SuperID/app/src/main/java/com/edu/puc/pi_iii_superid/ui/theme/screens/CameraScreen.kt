@@ -27,21 +27,17 @@ import com.google.accompanist.permissions.rememberPermissionState
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun CameraScreen(navController: NavController) {
-    // Estado da permissão da câmera
     val cameraPermissionState = rememberPermissionState(android.Manifest.permission.CAMERA)
-   
-    // Efeito que será executado uma vez quando o Composable for lançado
+
     LaunchedEffect(Unit) {
-        // Se a permissão não estiver concedida, solicita a permissão
         if (!cameraPermissionState.status.isGranted) {
             cameraPermissionState.launchPermissionRequest()
         }
     }
-    // Se a permissão foi concedida, mostra a visualização da câmera
+
     if (cameraPermissionState.status.isGranted) {
         CameraPreview(navController)
     } else {
-        // Caso a permissão não tenha sido concedida, mostra uma mensagem com um botão para solicitar a permissão novamente
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,

@@ -31,30 +31,26 @@ fun CreateOrEditPasswordScreen(
     navController: NavHostController,
     isEdit: Boolean = true,
     categoria: String,
-    categoriaNome: String,
+    categoriaNome : String,
     senhaId: String? = null
 ) {
-    // Instâncias do Firebase e contextos auxiliares
     val auth = FirebaseAuth.getInstance()
     val firestore = FirebaseFirestore.getInstance()
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
-    // Controle da visibilidade da senha
     val senhaVisivel = remember { mutableStateOf(false) }
 
-    // Estados dos campos de entrada
     val nome = remember { mutableStateOf("") }
     val login = remember { mutableStateOf("") }
     val senha = remember { mutableStateOf("") }
     val descricao = remember { mutableStateOf("") }
 
-    // Controle do diálogo de confirmação
     var showDialog by remember { mutableStateOf(false) }
 
     val drawerState = rememberDrawerState(DrawerValue.Closed)
 
-    // Função para gerar token aleatório em base64
+    // Função para gerar token base64
     fun generateBase64Token(lengthChars: Int = 256): String {
         val bytesLength = (lengthChars * 3) / 4
         val random = java.security.SecureRandom()
@@ -63,7 +59,7 @@ fun CreateOrEditPasswordScreen(
         return android.util.Base64.encodeToString(bytes, android.util.Base64.NO_WRAP)
     }
 
-    // Carregamento de dados se estiver em modo de edição
+    // Carregar dados para edição
     LaunchedEffect(senhaId) {
         if (isEdit && senhaId != null) {
             val user = auth.currentUser
@@ -81,20 +77,23 @@ fun CreateOrEditPasswordScreen(
                         nome.value = doc.getString("nome") ?: ""
                         login.value = doc.getString("login") ?: ""
 
-                        // Descriptografa a senha salva
+                        // Pega a senha criptografada do Firestore
                         val senhaCriptografada = doc.getString("senha") ?: ""
+
+                        // Descriptografa a senha
                         senha.value = if (senhaCriptografada.isNotEmpty()) {
                             try {
                                 CryptoUtils.decrypt(senhaCriptografada)
                             } catch (e: Exception) {
                                 Toast.makeText(context, "Erro ao descriptografar senha: ${e.message}", Toast.LENGTH_LONG).show()
-                                ""
+                                "" // senha vazia em caso de erro
                             }
                         } else {
                             ""
                         }
 
                         descricao.value = doc.getString("descricao") ?: ""
+                        // Categoria já vem do parâmetro
                     }
                 } catch (e: Exception) {
                     Toast.makeText(context, "Erro ao carregar senha: ${e.message}", Toast.LENGTH_LONG).show()
@@ -103,7 +102,7 @@ fun CreateOrEditPasswordScreen(
         }
     }
 
-    // Função para salvar (criar/editar) senha no Firestore
+    // Função para salvar a senha (criar ou atualizar)
     fun salvarSenha(
         firestore: FirebaseFirestore,
         auth: FirebaseAuth,
@@ -121,7 +120,7 @@ fun CreateOrEditPasswordScreen(
         val userId = auth.currentUser?.uid ?: return
         val token = gerarToken()
 
-        // Criptografa a senha
+        // Criptografar a senha antes de salvar
         val senhaCriptografada = try {
             CryptoUtils.encrypt(senha)
         } catch (e: Exception) {
@@ -132,7 +131,7 @@ fun CreateOrEditPasswordScreen(
         val senhaData = hashMapOf(
             "nome" to nome,
             "login" to login,
-            "senha" to senhaCriptografada,
+            "senha" to senhaCriptografada,  // SALVA A SENHA CRIPTOGRAFADA
             "descricao" to descricao,
             "token" to token
         )
@@ -156,7 +155,7 @@ fun CreateOrEditPasswordScreen(
         }
     }
 
-    // Função para excluir senha
+    // Função para excluir a senha
     fun excluirSenha(categoriaId: String, senhaId: String) {
         val user = auth.currentUser
         if (user == null) {
@@ -183,7 +182,7 @@ fun CreateOrEditPasswordScreen(
         }
     }
 
-    // Drawer lateral da tela
+
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -222,7 +221,6 @@ fun CreateOrEditPasswordScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
 
-                // Botão de voltar com texto dinâmico para edição ou criação
                 Button(
                     onClick = { navController.popBackStack() },
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
@@ -241,7 +239,6 @@ fun CreateOrEditPasswordScreen(
                     )
                 }
 
-                // Campos de entrada
                 OutlinedTextField(
                     value = nome.value,
                     onValueChange = {
@@ -262,7 +259,6 @@ fun CreateOrEditPasswordScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                // Campo de senha com ícone de visibilidade
                 OutlinedTextField(
                     value = senha.value,
                     onValueChange = { senha.value = it },
@@ -279,7 +275,6 @@ fun CreateOrEditPasswordScreen(
                     visualTransformation = if (senhaVisivel.value) VisualTransformation.None else PasswordVisualTransformation()
                 )
 
-                // Campo de categoria (não editável)
                 OutlinedTextField(
                     value = categoriaNome,
                     onValueChange = {},
@@ -288,7 +283,6 @@ fun CreateOrEditPasswordScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                // Campo de descrição
                 OutlinedTextField(
                     value = descricao.value,
                     onValueChange = {
@@ -303,12 +297,11 @@ fun CreateOrEditPasswordScreen(
                     maxLines = 5
                 )
 
-                // Botões de salvar e excluir (se for edição)
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    var isButtonEnabled: Boolean = true
+                    var isButtonEnabled:Boolean = true;
 
                     Button(
                         onClick = {
@@ -350,7 +343,7 @@ fun CreateOrEditPasswordScreen(
                         Text("SALVAR", color = Color.White)
                     }
 
-                    // Botão excluir visível apenas em modo de edição
+
                     if (isEdit) {
                         Spacer(modifier = Modifier.width(8.dp))
 
@@ -365,7 +358,6 @@ fun CreateOrEditPasswordScreen(
                     }
                 }
 
-                // Diálogo de confirmação para exclusão
                 if (showDialog) {
                     AlertDialog(
                         onDismissRequest = { showDialog = false },

@@ -30,14 +30,13 @@ import com.edu.puc.pi_iii_superid.data.CadastroViewModel
 
 @Composable
 fun SignUpScreen(
-    viewModel: CadastroViewModel = viewModel(), // ViewModel para gerenciamento dos dados do cadastro
-    navController: NavController // Controlador de navegação para trocar de tela
+    viewModel: CadastroViewModel = viewModel(),
+    navController: NavController
 ) {
-    val context = LocalContext.current // Contexto da aplicação para mostrar Toast
-    var passwordVisible by remember { mutableStateOf(false) } // Estado para controlar se a senha está visível ou oculta
-    var confirmPassword by remember { mutableStateOf("") } // Estado para armazenar confirmação de senha digitada
+    val context = LocalContext.current
+    var passwordVisible by remember { mutableStateOf(false) }
+    var confirmPassword by remember { mutableStateOf("") }
 
-    // Função para traduzir mensagens de erro do Firebase para mensagens em português mais amigáveis
     fun traduzirErroFirebase(mensagem: String): String {
         return when {
             "email address is already in use" in mensagem.lowercase() -> "Este e-mail já está em uso."
@@ -49,7 +48,6 @@ fun SignUpScreen(
         }
     }
 
-    // Função para validar se a senha atende os critérios: pelo menos 1 minúscula, 1 maiúscula, 1 número, e mínimo 6 caracteres
     fun validarSenha(senha: String): String? {
         val regex = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}$")
 
@@ -60,20 +58,20 @@ fun SignUpScreen(
         }
     }
 
-    // Layout principal da tela usando Surface para fundo azul
+
+
     Surface(
-        modifier = Modifier.fillMaxSize(), // Preenche toda a tela
-        color = Color(0xFF00A6FF) // Cor azul de fundo
+        modifier = Modifier.fillMaxSize(),
+        color = Color(0xFF00A6FF)
     ) {
-        Box(modifier = Modifier.fillMaxSize()) { // Container principal preenchendo a tela inteira
+        Box(modifier = Modifier.fillMaxSize()) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(32.dp), // Espaçamento em todas as laterais
-                horizontalAlignment = Alignment.CenterHorizontally, // Centraliza itens horizontalmente
-                verticalArrangement = Arrangement.Center // Centraliza itens verticalmente
+                    .padding(32.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
-                // Título da tela
                 Text(
                     text = "CADASTRO",
                     fontSize = 42.sp,
@@ -81,17 +79,16 @@ fun SignUpScreen(
                     color = Color.White
                 )
 
-                Spacer(modifier = Modifier.height(32.dp)) // Espaço vertical entre elementos
+                Spacer(modifier = Modifier.height(32.dp))
 
-                // Campo de texto para o nome
                 OutlinedTextField(
-                    value = viewModel.nomeF, // Valor atual vindo do ViewModel
-                    onValueChange = { viewModel.onFieldChange("nome", it) }, // Atualiza valor no ViewModel
-                    label = { Text("Nome", color = Color.White) }, // Label do campo
+                    value = viewModel.nomeF,
+                    onValueChange = { viewModel.onFieldChange("nome", it) },
+                    label = { Text("Nome", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
-                    singleLine = true, // Campo de uma linha só
-                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done), // Configuração do teclado
-                    colors = OutlinedTextFieldDefaults.colors( // Personalização das cores do campo
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
+                    colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.White,
                         unfocusedBorderColor = Color.White,
                         cursorColor = Color.White,
@@ -106,7 +103,6 @@ fun SignUpScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Campo de texto para o email
                 OutlinedTextField(
                     value = viewModel.emailF,
                     onValueChange = { viewModel.onFieldChange("email", it) },
@@ -129,7 +125,6 @@ fun SignUpScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Campo de texto para senha
                 OutlinedTextField(
                     value = viewModel.senhaF,
                     onValueChange = { viewModel.onFieldChange("senhaF", it) },
@@ -142,9 +137,9 @@ fun SignUpScreen(
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
-                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(), // Oculta ou mostra senha
+                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
-                        IconButton(onClick = { passwordVisible = !passwordVisible }) { // Botão para alternar visibilidade
+                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
                             Icon(
                                 imageVector = if (passwordVisible) Icons.Default.VisibilityOff else Icons.Default.Visibility,
                                 contentDescription = if (passwordVisible) "Ocultar senha" else "Mostrar senha",
@@ -167,16 +162,14 @@ fun SignUpScreen(
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Linha com texto e ícone que mostra as regras da senha
                 Row(
                     horizontalArrangement = Arrangement.Absolute.Left,
                     modifier = Modifier.fillMaxWidth()
                 ){
                     Text("Regra de Senha", color = Color.White)
-                    RegrasSenhaInfo() // Componente que exibe as regras ao clicar no ícone info
+                    RegrasSenhaInfo()
                 }
 
-                // Campo de texto para confirmar senha
                 OutlinedTextField(
                     value = confirmPassword,
                     onValueChange = { confirmPassword = it },
@@ -186,7 +179,7 @@ fun SignUpScreen(
                     keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
-                        IconButton(onClick = { passwordVisible = !passwordVisible }) { // Mesma lógica para mostrar/ocultar senha
+                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
                             Icon(
                                 imageVector = if (passwordVisible) Icons.Default.VisibilityOff else Icons.Default.Visibility,
                                 contentDescription = "Toggle Password",
@@ -209,10 +202,9 @@ fun SignUpScreen(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                // Botão de cadastro
                 Button(
                     onClick = {
-                        // Validação básica dos campos
+
                         if (viewModel.nomeF.isBlank() ||
                             viewModel.emailF.isBlank() ||
                             viewModel.senhaF.isBlank() ||
@@ -222,20 +214,18 @@ fun SignUpScreen(
                             return@Button
                         }
 
-                        // Verifica se as senhas coincidem
                         if (viewModel.senhaF != confirmPassword) {
                             Toast.makeText(context, "As senhas não coincidem", Toast.LENGTH_LONG).show()
                             return@Button
                         }
 
-                        // Validação da regra de senha
                         val erroSenha = validarSenha(viewModel.senhaF)
                         if (erroSenha != null) {
                             Toast.makeText(context, erroSenha, Toast.LENGTH_LONG).show()
                             return@Button
                         }
 
-                        // Chama a função para cadastrar o usuário via ViewModel
+
                         viewModel.cadastrarUsuario(
                             email = viewModel.emailF,
                             senha = viewModel.senhaF,
@@ -245,10 +235,10 @@ fun SignUpScreen(
                                     "Email Enviado. Valide seu email para entrar!",
                                     Toast.LENGTH_LONG
                                 ).show()
-                                navController.navigate("login") // Navega para tela de login após sucesso
+                                navController.navigate("login")
                             },
                             onError = { erro ->
-                                val mensagem = traduzirErroFirebase(erro) // Tradução da mensagem de erro
+                                val mensagem = traduzirErroFirebase(erro)
                                 Toast.makeText(context, mensagem, Toast.LENGTH_LONG).show()
                             }
                         )
@@ -256,17 +246,15 @@ fun SignUpScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)), // Cor azul escuro
-                    shape = RoundedCornerShape(30.dp), // Bordas arredondadas
-                    elevation = ButtonDefaults.buttonElevation(8.dp) // Elevação da sombra
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
+                    shape = RoundedCornerShape(30.dp),
+                    elevation = ButtonDefaults.buttonElevation(8.dp)
                 ) {
-                    // Texto do botão cadastrar
                     Text("CADASTRAR", color = Color.White, fontWeight = FontWeight.Bold,  fontSize = 20.sp)
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Linha para link de login caso já tenha conta
                 Row(
                     horizontalArrangement = Arrangement.Center,
                     modifier = Modifier.fillMaxWidth()
@@ -278,7 +266,7 @@ fun SignUpScreen(
                         color = Color.White,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.clickable { navController.navigate("login") } // Navega para login ao clicar
+                        modifier = Modifier.clickable { navController.navigate("login") }
                     )
                 }
             }
@@ -286,13 +274,12 @@ fun SignUpScreen(
     }
 }
 
-// Composable que exibe um ícone de informação e ao clicar mostra as regras da senha em um menu dropdown
+
 @Composable
 fun RegrasSenhaInfo() {
-    var expanded by remember { mutableStateOf(false) } // Estado para controlar se o menu está aberto
+    var expanded by remember { mutableStateOf(false) }
 
     Box {
-        // Ícone info clicável para abrir o menu
         Icon(
             imageVector = Icons.Default.Info,
             contentDescription = "Mostrar regras da senha",
@@ -302,16 +289,19 @@ fun RegrasSenhaInfo() {
                 .clickable { expanded = true }
         )
 
-        // Menu dropdown com as regras da senha
         DropdownMenu(
             expanded = expanded,
-            onDismissRequest = { expanded = false }, // Fecha o menu ao clicar fora
-            offset = DpOffset(x = 0.dp, y = 4.dp), // Pequeno deslocamento para baixo
+            onDismissRequest = { expanded = false },
+            offset = DpOffset(x = 0.dp, y = 4.dp),
             modifier = Modifier.width(250.dp)
         ) {
             DropdownMenuItem(
                 onClick = { expanded = false },
                 text = { Text("Regras da senha:", fontWeight = FontWeight.Bold, color = Color.Black) }
+            )
+            DropdownMenuItem(
+                onClick = { expanded = false },
+                text = { Text("- Min 6 caracteres", color = Color.Black) }
             )
             DropdownMenuItem(
                 onClick = { expanded = false },
@@ -325,6 +315,7 @@ fun RegrasSenhaInfo() {
                 onClick = { expanded = false },
                 text = { Text("- Um número", color = Color.Black) }
             )
+
         }
     }
 }

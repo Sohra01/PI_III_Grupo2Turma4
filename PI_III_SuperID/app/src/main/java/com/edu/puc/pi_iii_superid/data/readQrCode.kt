@@ -27,63 +27,50 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 
-@SuppressLint("RememberReturnType") // Suprime o aviso relacionado ao uso de remember no tipo de retorno
+@SuppressLint("RememberReturnType")
 @Composable
 fun CameraPreview(navController: NavController) {
-    val context = LocalContext.current // Obtém o contexto atual
-    val lifecycleOwner = LocalLifecycleOwner.current // Obtém o dono do ciclo de vida atual (Activity ou Composable)
+    val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
 
-    // Estado que armazena o QR Code lido, inicialmente nulo
     val scannedCodeState = remember { mutableStateOf<String?>(null) }
 
-    // Cria uma View nativa (PreviewView) para exibir a câmera dentro do Compose
     AndroidView(
         factory = { ctx ->
             PreviewView(ctx).apply {
-                scaleType = PreviewView.ScaleType.FILL_CENTER // Ajusta o preenchimento da câmera
+                scaleType = PreviewView.ScaleType.FILL_CENTER
             }
         },
-        modifier = Modifier.fillMaxSize(), // Ocupa todo o tamanho disponível
-        update = { previewView -> // Callback chamado para atualizar a view
-
-            // Obtém o provedor da câmera (CameraX)
+        modifier = Modifier.fillMaxSize(),
+        update = { previewView ->
             val cameraProviderFuture = ProcessCameraProvider.getInstance(context)
-
-            // Listener quando o cameraProvider estiver pronto
             cameraProviderFuture.addListener({
                 val cameraProvider = cameraProviderFuture.get()
 
-                // Cria a visualização da câmera
                 val preview = Preview.Builder().build().also {
-                    it.setSurfaceProvider(previewView.surfaceProvider) // Define onde a câmera será desenhada
+                    it.setSurfaceProvider(previewView.surfaceProvider)
                 }
 
-                // Seleciona a câmera traseira
                 val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
-                // Configura o analisador de imagem para ler QR Codes
                 val imageAnalysis = ImageAnalysis.Builder()
-                    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST) // Mantém só o frame mais recente
+                    .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build()
                     .also {
                         it.setAnalyzer(
-                            ContextCompat.getMainExecutor(context), // Executor principal (Main Thread)
-                            QrCodeAnalyzer { result -> // Usa o analisador criado para detectar QR Codes
-                                // Verifica se já não leu algum QR antes
+                            ContextCompat.getMainExecutor(context),
+                            QrCodeAnalyzer { result ->
                                 if (scannedCodeState.value == null) {
-                                    scannedCodeState.value = result // Salva o QR code escaneado
-                                    processLoginToken(context, result, navController) // Processa o login via QR
-                                    cameraProvider.unbindAll() // Desativa a câmera após ler
+                                    scannedCodeState.value = result
+                                    processLoginToken(context, result, navController)
+                                    cameraProvider.unbindAll()
                                 }
                             }
                         )
                     }
 
                 try {
-                    // Desvincula qualquer uso anterior da câmera
                     cameraProvider.unbindAll()
-
-                    // Vincula a câmera ao ciclo de vida da tela (para que pare automaticamente)
                     cameraProvider.bindToLifecycle(
                         lifecycleOwner,
                         cameraSelector,
@@ -91,45 +78,38 @@ fun CameraPreview(navController: NavController) {
                         imageAnalysis
                     )
                 } catch (e: Exception) {
-                    // Loga erro caso algo dê errado ao iniciar a câmera
                     Log.e("CameraPreview", "Erro ao iniciar câmera", e)
                 }
-            }, ContextCompat.getMainExecutor(context)) // Executor principal
+            }, ContextCompat.getMainExecutor(context))
         }
     )
 }
 
-// Função que processa o QR Code lido para confirmar o login
 fun processLoginToken(context: Context, loginToken: String, navController: NavController) {
-    val user = FirebaseAuth.getInstance().currentUser // Obtém o usuário atual logado
+    val user = FirebaseAuth.getInstance().currentUser
 
-    // Se não houver usuário autenticado, exibe uma mensagem e cancela
     if (user == null) {
         Toast.makeText(context, "Usuário não autenticado", Toast.LENGTH_SHORT).show()
         return
     }
 
-    val db = FirebaseFirestore.getInstance() // Obtém instância do Firestore
-    val loginDocRef = db.collection("login").document(loginToken) // Referência ao documento do login via QR
+    val db = FirebaseFirestore.getInstance()
+    val loginDocRef = db.collection("login").document(loginToken)
 
-    // Atualiza o documento no Firestore com o UID do usuário e o timestamp do login
     loginDocRef.update(
         mapOf(
             "user" to user.uid,
-            "loginAt" to FieldValue.serverTimestamp() // Data e hora no servidor
+            "loginAt" to FieldValue.serverTimestamp()
         )
     ).addOnSuccessListener {
-        // Sucesso na confirmação do login
         Toast.makeText(context, "Login confirmado com sucesso!", Toast.LENGTH_SHORT).show()
 
-        // Navega para a tela de categorias e remove a tela da câmera da pilha
         Handler(Looper.getMainLooper()).post {
             navController.navigate("category") {
-                popUpTo("camera") { inclusive = true } // Remove a câmera da pilha
+                popUpTo("camera") { inclusive = true }
             }
         }
     }.addOnFailureListener { e ->
-        // Erro ao atualizar o Firestore
         Toast.makeText(context, "Erro ao confirmar login", Toast.LENGTH_SHORT).show()
         Log.e("QRCodeLogin", "Erro ao atualizar Firestore", e)
     }
