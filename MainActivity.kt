@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
+// Camera para leitura do QRcode
 @Composable
 fun TesteUI() {
     var showCamera by remember { mutableStateOf(false) }

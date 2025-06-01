@@ -10,13 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d3003ab-fa97-40c9-866d-5e00b096076e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PI_III_SuperID/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PI_III_SuperID/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InicialActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/InicialActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/cadastroActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PI_III_SuperID" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -71,12 +74,12 @@
     &quot;assignee&quot;: &quot;Sohra01&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Sohra01/PI_III_GrupoH.git",
-    "accountId": "356f5aca-730d-4ec9-8082-1e2cc0c89d86"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sohra01/PI_III_GrupoH.git&quot;,
+    &quot;accountId&quot;: &quot;356f5aca-730d-4ec9-8082-1e2cc0c89d86&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -98,7 +101,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Development",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/24012009/Documents/GitHub/PI_III_GrupoH",
     "project.structure.last.edited": "Modules",

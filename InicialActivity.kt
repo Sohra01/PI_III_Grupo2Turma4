@@ -33,8 +33,8 @@ class InicialActivity : ComponentActivity() {
     }
 }
 
-//Por enquanto aqui não tem nada, mas imagino que essa seja a activity que vai ter o
-//pop up de termos e o tutorial
+
+//Aqui está a tela de inicio que mostra o como usar, termos de uso e a apresentação.
 
 @Composable
 fun TelaInicial()
