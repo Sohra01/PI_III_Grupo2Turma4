@@ -22,23 +22,24 @@ import com.google.firebase.firestore.FirebaseFirestore
 import androidx.compose.runtime.mutableStateOf
 import android.os.Handler
 import android.os.Looper
-
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
-
+// Composable que exibe a visualização da câmera e analisa o QR Code
 @SuppressLint("RememberReturnType")
 @Composable
 fun CameraPreview(navController: NavController) {
-    val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
+    val context = LocalContext.current // contexto atual do app
+    val lifecycleOwner = LocalLifecycleOwner.current // ciclo de vida da tela
 
+    // Estado para armazenar o valor do QR Code escaneado (evita múltiplas leituras)
     val scannedCodeState = remember { mutableStateOf<String?>(null) }
 
+    // Exibe uma visualização da câmera usando um AndroidView com PreviewView
     AndroidView(
         factory = { ctx ->
             PreviewView(ctx).apply {
-                scaleType = PreviewView.ScaleType.FILL_CENTER
+                scaleType = PreviewView.ScaleType.FILL_CENTER // tipo de escala da imagem
             }
         },
         modifier = Modifier.fillMaxSize(),
@@ -47,12 +48,14 @@ fun CameraPreview(navController: NavController) {
             cameraProviderFuture.addListener({
                 val cameraProvider = cameraProviderFuture.get()
 
+                // Criação do Preview da câmera
                 val preview = Preview.Builder().build().also {
                     it.setSurfaceProvider(previewView.surfaceProvider)
                 }
 
-                val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+                val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA // usa a câmera traseira
 
+                // Configura a análise de imagem com ML Kit
                 val imageAnalysis = ImageAnalysis.Builder()
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                     .build()
@@ -60,23 +63,24 @@ fun CameraPreview(navController: NavController) {
                         it.setAnalyzer(
                             ContextCompat.getMainExecutor(context),
                             QrCodeAnalyzer { result ->
+                                // Se ainda não escaneou, processa o QR Code
                                 if (scannedCodeState.value == null) {
                                     scannedCodeState.value = result
                                     processLoginToken(context, result, navController)
-                                    cameraProvider.unbindAll()
+                                    cameraProvider.unbindAll() // Para a análise após leitura
                                 }
                             }
                         )
                     }
 
                 try {
-                    cameraProvider.unbindAll()
+                    cameraProvider.unbindAll() // Desvincula qualquer uso anterior da câmera
                     cameraProvider.bindToLifecycle(
                         lifecycleOwner,
                         cameraSelector,
                         preview,
                         imageAnalysis
-                    )
+                    ) // Vincula o preview e a análise ao ciclo de vida da tela
                 } catch (e: Exception) {
                     Log.e("CameraPreview", "Erro ao iniciar câmera", e)
                 }
@@ -85,6 +89,7 @@ fun CameraPreview(navController: NavController) {
     )
 }
 
+// Função que processa o login a partir do QR Code escaneado
 fun processLoginToken(context: Context, loginToken: String, navController: NavController) {
     val user = FirebaseAuth.getInstance().currentUser
 
@@ -96,6 +101,7 @@ fun processLoginToken(context: Context, loginToken: String, navController: NavCo
     val db = FirebaseFirestore.getInstance()
     val loginDocRef = db.collection("login").document(loginToken)
 
+    // Atualiza o documento de login com o UID do usuário e timestamp
     loginDocRef.update(
         mapOf(
             "user" to user.uid,
@@ -104,9 +110,10 @@ fun processLoginToken(context: Context, loginToken: String, navController: NavCo
     ).addOnSuccessListener {
         Toast.makeText(context, "Login confirmado com sucesso!", Toast.LENGTH_SHORT).show()
 
+        // Navega para a tela de categorias após o sucesso
         Handler(Looper.getMainLooper()).post {
             navController.navigate("category") {
-                popUpTo("camera") { inclusive = true }
+                popUpTo("camera") { inclusive = true } // Remove a tela da câmera da pilha
             }
         }
     }.addOnFailureListener { e ->
