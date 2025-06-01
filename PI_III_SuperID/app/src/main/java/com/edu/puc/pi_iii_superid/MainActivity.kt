@@ -21,6 +21,7 @@ import com.edu.puc.pi_iii_superid.ui.theme.screens.CreateOrEditPasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.GuideScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.LoadingScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.OnBoardingScreen
+import com.edu.puc.pi_iii_superid.ui.theme.screens.PasswordAppScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.PasswordScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.RecoveryMailScreen
 import com.edu.puc.pi_iii_superid.ui.theme.screens.SendMailScreen
@@ -48,7 +49,7 @@ class MainActivity : ComponentActivity() {
                 // Determina a tela inicial com base no estado do usuário
                 val startDestination = when {
                     termsAcceptedState.value == null -> "loading"
-                    user != null && user.isEmailVerified -> "category"
+                    user != null -> "senhaapp"
                     termsAccepted -> "welcome"
                     else -> "onboarding"
                 }
@@ -180,6 +181,12 @@ class MainActivity : ComponentActivity() {
                         }
                         composable("camera") {
                             CameraScreen(navController)
+                        }
+                        composable("senhaapp") {
+                            PasswordAppScreen(
+                                onSenhaCorreta = { navController.navigate("category") },
+                                onErro = { /* mostrar erro ou feedback */ }
+                            )
                         }
 
                     }

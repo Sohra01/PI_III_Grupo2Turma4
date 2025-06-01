@@ -29,14 +29,27 @@ fun RecoveryMailScreen(
     val context = LocalContext.current
     var email by remember { mutableStateOf("") }
 
-    fun verificarEmailNoFirestore(email: String, context: Context, onExiste: () -> Unit, onNaoExiste: () -> Unit) {
+    fun verificarEmailNoFirestore(
+        email: String,
+        context: Context,
+        onPodeRecuperar: () -> Unit,
+        onEmailNaoVerificado: () -> Unit,
+        onNaoExiste: () -> Unit
+    ) {
         val db = FirebaseFirestore.getInstance()
         db.collection("usuarios")
             .whereEqualTo("email", email)
             .get()
             .addOnSuccessListener { result ->
                 if (!result.isEmpty) {
-                    onExiste()
+                    val usuario = result.documents.first()
+                    val emailVerificado = usuario.getBoolean("emailVerificado") ?: false
+
+                    if (emailVerificado) {
+                        onPodeRecuperar()
+                    } else {
+                        onEmailNaoVerificado()
+                    }
                 } else {
                     onNaoExiste()
                 }
@@ -45,6 +58,7 @@ fun RecoveryMailScreen(
                 Toast.makeText(context, "Erro ao verificar e-mail", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     fun enviarLinkDeRecuperacao(email: String, context: Context) {
         val auth = FirebaseAuth.getInstance()
@@ -64,15 +78,19 @@ fun RecoveryMailScreen(
         verificarEmailNoFirestore(
             email,
             context,
-            onExiste = {
+            onPodeRecuperar = {
                 enviarLinkDeRecuperacao(email, context)
                 navController.navigate("sendmail/${email}")
-                       },
+            },
+            onEmailNaoVerificado = {
+                Toast.makeText(context, "E-mail não verificado. Verifique sua caixa de entrada.", Toast.LENGTH_LONG).show()
+            },
             onNaoExiste = {
                 Toast.makeText(context, "E-mail não encontrado", Toast.LENGTH_SHORT).show()
             }
         )
     }
+
 
 
     Box(

@@ -1,9 +1,11 @@
 package com.example.superid.ui.theme.screens
 
+import PreferencesManager
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -14,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
@@ -21,6 +24,10 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.edu.puc.pi_iii_superid.data.LoginViewModel
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+
 
 @Composable
 fun LoginScreen(
@@ -29,7 +36,9 @@ fun LoginScreen(
     onSignUpClick: () -> Unit,
     onForgotPasswordClick: () -> Unit
 ) {
+    val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
+    val preferencesManager = remember { PreferencesManager(context) }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -61,6 +70,8 @@ fun LoginScreen(
                     onValueChange = { viewModel.email.value = it },
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.White,
                         unfocusedBorderColor = Color.White,
@@ -81,6 +92,8 @@ fun LoginScreen(
                     onValueChange = { viewModel.senha.value = it },
                     label = { Text("Senha", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
                         IconButton(onClick = { passwordVisible = !passwordVisible }) {
@@ -133,8 +146,13 @@ fun LoginScreen(
                         } else {
                             viewModel.loginUsuario(
                                 onSuccess = {
-                                    Toast.makeText(context, "Login realizado!", Toast.LENGTH_LONG).show()
-                                    navController.navigate("category")
+                                    coroutineScope.launch {
+                                        preferencesManager.setSenhaMestre(viewModel.senha.value)  // chamada suspend
+                                        Toast.makeText(context, "Login realizado!", Toast.LENGTH_LONG).show()
+                                        navController.navigate("category") {
+                                            popUpTo("login_screen") { inclusive = true }
+                                        }
+                                    }
                                 },
                                 onError = { erro ->
                                     Toast.makeText(context, erro, Toast.LENGTH_LONG).show()

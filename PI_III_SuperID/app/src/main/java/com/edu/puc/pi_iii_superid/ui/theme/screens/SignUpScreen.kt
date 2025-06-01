@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Visibility
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.DpOffset
@@ -84,6 +86,8 @@ fun SignUpScreen(
                     onValueChange = { viewModel.onFieldChange("nome", it) },
                     label = { Text("Nome", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.White,
                         unfocusedBorderColor = Color.White,
@@ -104,6 +108,8 @@ fun SignUpScreen(
                     onValueChange = { viewModel.onFieldChange("email", it) },
                     label = { Text("Email", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color.White,
                         unfocusedBorderColor = Color.White,
@@ -129,6 +135,8 @@ fun SignUpScreen(
                         }
                     },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
                         IconButton(onClick = { passwordVisible = !passwordVisible }) {
@@ -167,6 +175,8 @@ fun SignUpScreen(
                     onValueChange = { confirmPassword = it },
                     label = { Text("Confirmar Senha", color = Color.White) },
                     modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     trailingIcon = {
                         IconButton(onClick = { passwordVisible = !passwordVisible }) {

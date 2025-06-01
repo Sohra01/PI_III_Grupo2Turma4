@@ -7,27 +7,27 @@ const cors = require("cors");
 
 admin.initializeApp();
 const db = admin.firestore();
-const { FieldValue } = require("firebase-admin/firestore");
+const {FieldValue} = require("firebase-admin/firestore");
 
 const app = express();
 
 // CORS apenas para sites permitidos
-const allowedOrigins = ["https://www.seusiteparceiro.com"];
+const allowedOrigins = ["http://localhost:5000"];
 app.use(cors({
-  origin: function (origin, callback) {
+  origin: function(origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
     }
-  }
+  },
 }));
 
-app.use(express.json()); // <- ESSENCIAL para processar JSON!
+app.use(express.json());
 
 app.post("/", async (req, res) => {
   try {
-    const { apiKey, siteUrl } = req.body;
+    const {apiKey, siteUrl} = req.body;
 
     if (!apiKey || !siteUrl) {
       return res.status(400).json({
@@ -52,68 +52,60 @@ app.post("/", async (req, res) => {
 
     const qrDataURL = await QRCode.toDataURL(loginToken);
 
-    return res.status(200).json({ qrCodeBase64: qrDataURL });
+    return res.status(200).json({
+      qrCodeBase64: qrDataURL,
+      loginToken: loginToken,
+    });
   } catch (error) {
     console.error("Erro na performAuth:", error);
-    return res.status(500).json({ error: "Erro interno no servidor." });
+    return res.status(500).json({error: "Erro interno no servidor."});
   }
 });
 
-exports.getLoginStatus = functions.https.onRequest(async (req, res) => {
-  cors(req, res, async () => {
-    try {
-      const { loginToken } = req.body;
-      if (!loginToken) {
-        return res.status(400).json({error: "loginToken obrigatório"});
-      }
-
-      const loginDocRef = db.collection("login").doc(loginToken);
-      const loginDoc = await loginDocRef.get();
-
-      if (!loginDoc.exists) {
-        return res.status(404).json({error: "loginToken não encontrado ou expirado"});
-      }
-
-      const data = loginDoc.data();
-
-      // Controle de consultas e tempo
-      const now = Date.now();
-      const createdAt = data.createdAt ? data.createdAt.toMillis() : 0;
-
-      // Se mais de 1 minuto passou
-      if (now - createdAt > 60000) {
-        await loginDocRef.delete();
-        return res.status(410).json({error: "loginToken expirado"});
-      }
-
-      // Contagem de consultas
-      let count = data.checkCount || 0;
-      if (count >= 3) {
-        await loginDocRef.delete();
-        return res.status(410).json({error: "Número máximo de consultas excedido"});
-      }
-
-      count++;
-      await loginDocRef.update({ checkCount: count });
-
-      if (!data.user) {
-        // Ainda não houve login
-        return res.status(200).json({status: "pending"});
-      }
-
-      // Login confirmado, retorna UID do usuário e horário
-      return res.status(200).json({
-        status: "success",
-        user: data.user,
-        loginAt: data.loginAt ? data.loginAt.toDate() : null,
-      });
-
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({error: "Erro interno"});
+app.post("/getLoginStatus", async (req, res) => {
+  try {
+    if (req.method !== "POST") {
+      return res.status(405).json({error: "Método não permitido"});
     }
-  });
+    const {loginToken} = req.body;
+    if (!loginToken) {
+      return res.status(400).json({error: "loginToken obrigatório"});
+    }
+    const loginDocRef = db.collection("login").doc(loginToken);
+    const loginDoc = await loginDocRef.get();
+    if (!loginDoc.exists) {
+      return res.status(404).json({
+        error: "loginToken não encontrado ou expirado",
+      });
+    }
+    const docData = loginDoc.data();
+    const now = Date.now();
+    const createdAt = docData.createdAt ? docData.createdAt.toMillis() : 0;
+    if (now - createdAt > 60000) {
+      await loginDocRef.delete();
+      return res.status(410).json({error: "loginToken expirado"});
+    }
+    let count = docData.checkCount || 0;
+    if (count >= 3) {
+      await loginDocRef.delete();
+      return res.status(410).json({
+        error: "Número máximo de consultas excedido",
+      });
+    }
+    count++;
+    await loginDocRef.update({checkCount: count});
+    if (!docData.user) {
+      return res.status(200).json({status: "pending"});
+    }
+    return res.status(200).json({
+      status: "success",
+      user: docData.user,
+      loginAt: docData.loginAt ? docData.loginAt.toDate() : null,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({error: "Erro interno"});
+  }
 });
-
 
 exports.performAuth = functions.https.onRequest(app);

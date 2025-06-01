@@ -47,10 +47,10 @@ class LoginViewModel : ViewModel() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    if (user != null && user.isEmailVerified) {
+                    if (user != null) {
                         onSuccess()
                     } else {
-                        onError("E-mail não verificado. Verifique seu e-mail antes de entrar.")
+                        onError("Erro ao obter usuário.")
                     }
                 } else {
                     val erro = task.exception?.message ?: "Erro desconhecido"

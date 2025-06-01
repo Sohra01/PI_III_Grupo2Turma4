@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import android.widget.Toast
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -138,6 +140,8 @@ fun CreateOrEditCategoryScreen(
                             nomeCategoria = it
                         }
                     },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     label = { Text("Nome") },
                     modifier = Modifier.fillMaxWidth()
                 )
