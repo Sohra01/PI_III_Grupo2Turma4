@@ -17,64 +17,77 @@ import androidx.navigation.NavController
 import com.example.superid.R
 import com.google.firebase.auth.FirebaseAuth
 
+// Função composable que define o conteúdo do menu lateral (drawer)
 @Composable
 fun DrawerContent(onClose: () -> Unit, navController: NavController) {
 
+    // Obtém o usuário atualmente autenticado
     val user = FirebaseAuth.getInstance().currentUser
+    // Define nome e email do usuário (com valores padrão caso estejam nulos)
     val nome = user?.displayName ?: "Usuário"
     val email = user?.email ?: "E-mail não disponível"
 
+    // Coluna principal que estrutura o conteúdo do drawer
     Column(
         modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(0.8f)
-            .background(Color.White)
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .fillMaxHeight() // Ocupa toda a altura da tela
+            .fillMaxWidth(0.8f) // Ocupa 80% da largura da tela (como é comum em drawers)
+            .background(Color.White) // Fundo branco
+            .padding(16.dp), // Espaçamento interno
+        horizontalAlignment = Alignment.CenterHorizontally // Alinhamento central horizontal
     ) {
-        // Botão de fechar (X)
+        // Linha com botão para fechar o menu (ícone X)
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
             IconButton(onClick = onClose) {
-                Icon(Icons.Default.Close, contentDescription = "Fechar")
+                Icon(Icons.Default.Close, contentDescription = "Fechar") // Ícone de fechar
             }
         }
 
-        Spacer(modifier = Modifier.height(40.dp))
-        // Avatar
+        Spacer(modifier = Modifier.height(40.dp)) // Espaço entre o botão de fechar e o avatar
+
+        // Ícone/avatar do usuário (imagem local do drawable)
         Icon(
-            painter = painterResource(id = R.drawable.ic_user), // substitua pelo seu drawable
-            contentDescription = "User",
-            modifier = Modifier.size(120.dp),
-            tint = Color.Unspecified
+            painter = painterResource(id = R.drawable.ic_user), // Recurso de imagem (ícone do usuário)
+            contentDescription = "User", // Descrição para acessibilidade
+            modifier = Modifier.size(120.dp), // Tamanho do ícone
+            tint = Color.Unspecified // Cor padrão (imagem sem alteração de cor)
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(8.dp)) // Espaço entre o avatar e o nome
+
+        // Nome do usuário em letras maiúsculas e em negrito
         Text(nome.uppercase(), fontWeight = FontWeight.Bold)
+
+        // Email do usuário em cor cinza
         Text(email, color = Color.Gray)
 
-        Spacer(modifier = Modifier.height(500.dp))
+        Spacer(modifier = Modifier.height(500.dp)) // Espaço para empurrar os botões para a parte inferior
 
-        // Botões
+        // Botão para navegar até a tela de guia
         Button(
-            onClick = { navController.navigate("guide") },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
-            shape = RoundedCornerShape(50),
+            onClick = { navController.navigate("guide") }, // Ação ao clicar
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)), // Cor azul
+            shape = RoundedCornerShape(50), // Bordas arredondadas
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 4.dp)
+                .fillMaxWidth() // Ocupa a largura total disponível
+                .padding(vertical = 4.dp) // Espaçamento vertical entre os botões
         ) {
-            Text("GUIA", color = Color.White)
+            Text("GUIA", color = Color.White) // Texto branco no botão
         }
 
+        // Botão para fazer logout e voltar à tela de login
         Button(
-            onClick = { FirebaseAuth.getInstance().signOut(); navController.navigate("login")},
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8F0000)),
-            shape = RoundedCornerShape(50),
+            onClick = {
+                FirebaseAuth.getInstance().signOut() // Desloga o usuário
+                navController.navigate("login") // Navega para a tela de login
+            },
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF8F0000)), // Cor vermelha
+            shape = RoundedCornerShape(50), // Bordas arredondadas
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 4.dp)
+                .fillMaxWidth() // Ocupa a largura total disponível
+                .padding(vertical = 4.dp) // Espaçamento entre os botões
         ) {
-            Text("SAIR", color = Color.White)
+            Text("SAIR", color = Color.White) // Texto branco no botão
         }
     }
 }
