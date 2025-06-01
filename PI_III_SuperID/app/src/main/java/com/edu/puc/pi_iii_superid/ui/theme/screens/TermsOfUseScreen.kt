@@ -23,111 +23,121 @@
     import kotlinx.coroutines.launch
 
     @Composable
-    fun TermsOfUseScreen(
-        navController: NavController,
-        preferencesManager: PreferencesManager
+fun TermsOfUseScreen(
+    navController: NavController, // Controlador de navegação
+    preferencesManager: PreferencesManager // Gerenciador de preferências para salvar se os termos foram aceitos
+) {
+    val scope = rememberCoroutineScope() // CoroutineScope para executar ações assíncronas
+
+    var isChecked by remember { mutableStateOf(false) } // Estado do checkbox (se está marcado ou não)
+    val context = LocalContext.current // Contexto atual da aplicação
+
+    // Layout principal usando Box para centralizar conteúdo
+    Box(
+        modifier = Modifier
+            .fillMaxSize() // Preenche toda a tela
+            .background(Color(0xFF0077D7)), // Cor de fundo azul da tela
+        contentAlignment = Alignment.Center // Alinha conteúdo no centro
     ) {
-        val scope = rememberCoroutineScope()
-
-        var isChecked by remember { mutableStateOf(false) }
-        val context = LocalContext.current
-    
-    
-        Box(
+        // Coluna que organiza elementos na vertical
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally, // Alinha horizontalmente no centro
             modifier = Modifier
-                .fillMaxSize()
-                .background(Color(0xFF0077D7)), // Cor de fundo azul da tela
-            contentAlignment = Alignment.Center
+                .padding(24.dp) // Espaçamento externo
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .padding(24.dp)
+            // Cartão branco que contém os textos dos termos
+            Card(
+                shape = RoundedCornerShape(24.dp), // Arredondamento das bordas
+                elevation = CardDefaults.cardElevation(defaultElevation = 12.dp), // Sombra do card
+                colors = CardDefaults.cardColors(containerColor = Color.White), // Cor do card (branco)
+                modifier = Modifier.padding(bottom = 24.dp) // Espaçamento abaixo do card
             ) {
-                Card(
-                    shape = RoundedCornerShape(24.dp),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.White), // azul mais claro
-                    modifier = Modifier.padding(bottom = 24.dp)
+                // Coluna interna do card
+                Column(
+                    modifier = Modifier
+                        .padding(24.dp) // Espaçamento interno do card
+                        .widthIn(max = 320.dp), // Define uma largura máxima
+                    horizontalAlignment = Alignment.CenterHorizontally // Centraliza conteúdo horizontalmente
                 ) {
-                    Column(
-                        modifier = Modifier
-                            .padding(24.dp)
-                            .widthIn(max = 320.dp), // largura máxima
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                            text = "TERMOS DE USO",
-                            fontSize = 18.sp,
-                            style = MaterialTheme.typography.titleMedium.copy(
-                                color = Color(0xFF1E88E5),
-                                fontWeight = FontWeight.Bold
-                            ),
-                            modifier = Modifier.padding(bottom = 16.dp)
-                        )
-    
-                        val termsText = """
-                            ACEITAÇÃO DOS TERMOS
-                            AO ACESSAR E UTILIZAR ESTE APLICATIVO, VOCÊ CONCORDA COM OS PRESENTES TERMOS DE USO.
-    
-                            USO PERMITIDO
-                            VOCÊ SE COMPROMETE A UTILIZAR ESTE SITE APENAS PARA FINS LEGAIS E DE ACORDO COM ESTES TERMOS.
-    
-                            PROPRIEDADE INTELECTUAL
-                            TODO O CONTEÚDO DESTE SITE (TEXTOS, IMAGENS, LOGOS, ETC.) É PROTEGIDO POR DIREITOS AUTORAIS E NÃO PODE SER COPIADO OU REPRODUZIDO SEM AUTORIZAÇÃO.
-    
-                            MODIFICAÇÕES
-                            PODEMOS ALTERAR ESTES TERMOS DE USO A QUALQUER MOMENTO, SENDO RECOMENDÁVEL QUE VOCÊ OS REVISE PERIODICAMENTE.
-    
-                            LIMITAÇÃO DE RESPONSABILIDADE
-                            NÃO NOS RESPONSABILIZAMOS POR EVENTUAIS DANOS CAUSADOS PELO USO DESTE SITE OU POR INDISPONIBILIDADE TEMPORÁRIA DOS SERVIÇOS.
-                        """.trimIndent()
-    
-                        Text(
-                            text = termsText,
-                            style = MaterialTheme.typography.bodySmall.copy(color = Color.Black),
-                            fontSize = 15.sp,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-    
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(bottom = 24.dp)
-                ) {
-                    Checkbox(
-                        checked = isChecked,
-                        onCheckedChange = { isChecked = it },
-                        colors = CheckboxDefaults.colors(
-                            checkedColor = Color.White,
-                            checkmarkColor = Color(0xFF1E88E5),
-                            uncheckedColor = Color.White
-                        )
-                    )
+                    // Título "TERMOS DE USO"
                     Text(
-                        text = "Aceitar termos de uso",
-                        color = Color.White,
-                        style = MaterialTheme.typography.bodySmall
+                        text = "TERMOS DE USO",
+                        fontSize = 18.sp, // Tamanho da fonte
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            color = Color(0xFF1E88E5), // Cor azul no título
+                            fontWeight = FontWeight.Bold // Negrito
+                        ),
+                        modifier = Modifier.padding(bottom = 16.dp) // Espaço abaixo do título
+                    )
+
+                    // Texto com o conteúdo dos termos
+                    val termsText = """
+                        ACEITAÇÃO DOS TERMOS
+                        AO ACESSAR E UTILIZAR ESTE APLICATIVO, VOCÊ CONCORDA COM OS PRESENTES TERMOS DE USO.
+
+                        USO PERMITIDO
+                        VOCÊ SE COMPROMETE A UTILIZAR ESTE SITE APENAS PARA FINS LEGAIS E DE ACORDO COM ESTES TERMOS.
+
+                        PROPRIEDADE INTELECTUAL
+                        TODO O CONTEÚDO DESTE SITE (TEXTOS, IMAGENS, LOGOS, ETC.) É PROTEGIDO POR DIREITOS AUTORAIS E NÃO PODE SER COPIADO OU REPRODUZIDO SEM AUTORIZAÇÃO.
+
+                        MODIFICAÇÕES
+                        PODEMOS ALTERAR ESTES TERMOS DE USO A QUALQUER MOMENTO, SENDO RECOMENDÁVEL QUE VOCÊ OS REVISE PERIODICAMENTE.
+
+                        LIMITAÇÃO DE RESPONSABILIDADE
+                        NÃO NOS RESPONSABILIZAMOS POR EVENTUAIS DANOS CAUSADOS PELO USO DESTE SITE OU POR INDISPONIBILIDADE TEMPORÁRIA DOS SERVIÇOS.
+                    """.trimIndent()
+
+                    // Texto exibindo os termos dentro do card
+                    Text(
+                        text = termsText,
+                        style = MaterialTheme.typography.bodySmall.copy(color = Color.Black), // Estilo do texto
+                        fontSize = 15.sp, // Tamanho do texto
+                        textAlign = TextAlign.Center // Centraliza o texto
                     )
                 }
+            }
 
-                Button(
-                    onClick = {
-                        scope.launch {
-                            preferencesManager.setTermsAccepted(true)
-                            navController.navigate("welcome") {
-                                popUpTo("termsofuse") { inclusive = true }
-                            }
+            // Linha com o checkbox e texto "Aceitar termos de uso"
+            Row(
+                verticalAlignment = Alignment.CenterVertically, // Alinha verticalmente no centro
+                modifier = Modifier.padding(bottom = 24.dp) // Espaço abaixo da linha
+            ) {
+                // Checkbox que define se o usuário aceitou os termos
+                Checkbox(
+                    checked = isChecked, // Estado do checkbox
+                    onCheckedChange = { isChecked = it }, // Atualiza o estado quando clicar
+                    colors = CheckboxDefaults.colors(
+                        checkedColor = Color.White, // Cor quando marcado (fundo do box)
+                        checkmarkColor = Color(0xFF1E88E5), // Cor do check (✓)
+                        uncheckedColor = Color.White // Cor quando não está marcado
+                    )
+                )
+                // Texto ao lado do checkbox
+                Text(
+                    text = "Aceitar termos de uso",
+                    color = Color.White, // Cor branca
+                    style = MaterialTheme.typography.bodySmall // Estilo do texto
+                )
+            }
+
+            // Botão "ACEITAR"
+            Button(
+                onClick = {
+                    scope.launch { // Lança uma coroutine
+                        preferencesManager.setTermsAccepted(true) // Salva nas preferências que os termos foram aceitos
+                        navController.navigate("welcome") { // Navega para a tela de boas-vindas
+                            popUpTo("termsofuse") { inclusive = true } // Remove a tela de termos da pilha de navegação
                         }
-                    },
-                    enabled = isChecked,
-                    modifier = Modifier.fillMaxWidth(0.6f),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF03A9F4))
-                ) {
-                    Text("ACEITAR", color = Color.White)
-                }
-
+                    }
+                },
+                enabled = isChecked, // Só habilita o botão se o checkbox estiver marcado
+                modifier = Modifier.fillMaxWidth(0.6f), // O botão ocupa 60% da largura
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF03A9F4)) // Cor azul clara do botão
+            ) {
+                // Texto do botão
+                Text("ACEITAR", color = Color.White) // Texto branco
             }
         }
     }
+}
