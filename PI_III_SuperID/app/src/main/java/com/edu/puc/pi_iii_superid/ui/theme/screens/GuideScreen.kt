@@ -1,6 +1,9 @@
 package com.edu.puc.pi_iii_superid.ui.theme.screens
 
+// Importação do gerenciador de preferências personalizadas
 import PreferencesManager
+
+// Importações de bibliotecas do Jetpack Compose para construção da interface
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,22 +28,28 @@ import androidx.compose.ui.platform.LocalContext
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-
+// Composable que representa a tela de guia
 @Composable
 fun GuideScreen(navController: NavController) {
 
+    // Recupera o contexto atual
     val context = LocalContext.current
+    // Cria uma scope para executar tarefas assíncronas
     val scope = rememberCoroutineScope()
+    // Cria um gerenciador de preferências com base no contexto
     val preferencesManager = remember { PreferencesManager(context) }
 
+    // Espaçamento superior
     Spacer(modifier = Modifier.height(28.dp))
+
+    // Container principal da tela
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White)
+            .fillMaxSize() // Ocupa toda a tela
+            .background(Color.White) // Fundo branco
             .border(2.dp, Color(0xFF03A9F4)) // Borda azul
     ) {
-        // Conteúdo principal centralizado
+        // Coluna central para o conteúdo principal
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -48,8 +57,10 @@ fun GuideScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
+            // Espaçamento entre o topo e o conteúdo
             Spacer(modifier = Modifier.height(56.dp))
 
+            // Título da seção
             Text(
                 text = "COMO USAR:",
                 fontSize = 30.sp,
@@ -60,6 +71,7 @@ fun GuideScreen(navController: NavController) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
+            // Instruções em etapas com ícones
             TextosNumerados("1. Crie sua conta no app com seu nome, e-mail e uma senha mestre.")
             TextosNumerados("2. Crie suas senhas e categorias para acessar nossos sites e aplicativos parceiros, utilizando um ícone exatamente assim:")
             IconeCentral(Icons.Default.Add)
@@ -68,25 +80,30 @@ fun GuideScreen(navController: NavController) {
             TextosNumerados("4. Agora é só aproveitar sua total segurança com o super ID!")
         }
 
-        // Rodapé fixo no fundo da tela
+        // Rodapé com botão fixo no final da tela
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(60.dp)
-                .align(Alignment.BottomCenter) // POSICIONA NO FINAL DA TELA
+                .align(Alignment.BottomCenter) // Alinha o conteúdo no rodapé da tela
                 .background(
                     color = Color(0xFF03A9F4),
                     shape = RoundedCornerShape(topStart = 100.dp, topEnd = 100.dp)
                 ),
             contentAlignment = Alignment.Center
         ) {
+            // Botão "PROSSEGUIR"
             Button(
                 onClick = {
+                    // Ação ao clicar no botão
                     scope.launch {
+                        // Verifica se os termos foram aceitos
                         val aceitou = preferencesManager.termsAccepted.first()
                         if (aceitou) {
+                            // Volta para a tela anterior
                             navController.popBackStack()
                         } else {
+                            // Navega para a tela de termos de uso
                             navController.navigate("termsofuse")
                         }
                     }
@@ -99,7 +116,7 @@ fun GuideScreen(navController: NavController) {
     }
 }
 
-
+// Composable para exibir textos numerados na tela de instrução
 @Composable
 fun TextosNumerados(texto: String) {
     Text(
@@ -115,21 +132,21 @@ fun TextosNumerados(texto: String) {
     )
 }
 
+// Composable para exibir ícones circulares centralizados
 @Composable
 fun IconeCentral(icon: ImageVector) {
     Box(
         modifier = Modifier
-            .size(70.dp)
-            .background(Color(0xFF004A8F), shape = CircleShape),
-        contentAlignment = Alignment.Center
+            .size(70.dp) // Tamanho do círculo
+            .background(Color(0xFF004A8F), shape = CircleShape), // Fundo azul escuro em forma circular
+        contentAlignment = Alignment.Center // Ícone centralizado
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
-            tint = Color.White,
-            modifier = Modifier.size(34.dp)
+            tint = Color.White, // Cor do ícone branca
+            modifier = Modifier.size(34.dp) // Tamanho do ícone
         )
     }
-    Spacer(modifier = Modifier.height(8.dp))
+    Spacer(modifier = Modifier.height(8.dp)) // Espaço abaixo do ícone
 }
-
