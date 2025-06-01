@@ -1,5 +1,6 @@
 package com.edu.puc.pi_iii_superid.ui.theme.screens
 
+// Importações necessárias
 import PreferencesManager
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
@@ -14,48 +15,53 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
+// Composable que representa a tela de verificação de senha mestre do app
 @Composable
 fun PasswordAppScreen(
-    onSenhaCorreta: () -> Unit,
-    onErro: (() -> Unit)? = null
+    onSenhaCorreta: () -> Unit, // Callback executado ao digitar a senha correta
+    onErro: (() -> Unit)? = null // Callback opcional executado em caso de erro
 ) {
-    val coroutineScope = rememberCoroutineScope()
-    val context = LocalContext.current
-    val preferencesManager = remember { PreferencesManager(context) }
-    var senhaDigitada by remember { mutableStateOf("") }
-    var erro by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope() // Scope para chamadas assíncronas
+    val context = LocalContext.current // Contexto atual da aplicação
+    val preferencesManager = remember { PreferencesManager(context) } // Gerenciador de preferências
+    var senhaDigitada by remember { mutableStateOf("") } // Estado para senha digitada
+    var erro by remember { mutableStateOf(false) } // Estado para controle de erro
 
+    // Resetar erro ao carregar a tela
     LaunchedEffect(Unit) {
         erro = false
     }
 
+    // Layout principal da tela
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(24.dp), // Margem interna
+        verticalArrangement = Arrangement.Center, // Centraliza verticalmente
+        horizontalAlignment = Alignment.CenterHorizontally // Centraliza horizontalmente
     ) {
+        // Título
         Text(text = "Digite sua senha do app", style = MaterialTheme.typography.titleLarge)
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(16.dp)) // Espaço vertical
 
+        // Campo para digitar a senha
         OutlinedTextField(
             value = senhaDigitada,
             onValueChange = {
                 senhaDigitada = it
-                erro = false
+                erro = false // Resetar erro ao digitar
             },
             label = { Text("Senha") },
-            visualTransformation = PasswordVisualTransformation(),
+            visualTransformation = PasswordVisualTransformation(), // Oculta a senha
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            isError = erro,
+            isError = erro, // Estilo de erro
             modifier = Modifier.fillMaxWidth()
         )
 
+        // Exibe mensagem de erro, se necessário
         if (erro) {
             Text(
                 text = "Senha incorreta",
@@ -66,27 +72,28 @@ fun PasswordAppScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // Botão de entrada
         Button(
             onClick = {
                 coroutineScope.launch {
-                    val senhaSalva = preferencesManager.getSenhaMestre()
+                    val senhaSalva = preferencesManager.getSenhaMestre() // Recupera senha salva
                     if (senhaSalva == senhaDigitada) {
-                        onSenhaCorreta()
+                        onSenhaCorreta() // Chama callback se senha for correta
                     } else {
-                        erro = true
-                        onErro?.invoke()
-                        Toast.makeText(context, "Senha incorreta", Toast.LENGTH_SHORT).show()
+                        erro = true // Indica erro
+                        onErro?.invoke() // Chama callback de erro se existir
+                        Toast.makeText(context, "Senha incorreta", Toast.LENGTH_SHORT).show() // Notificação
                     }
                 }
             },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)),
-            shape = RoundedCornerShape(30.dp),
-            elevation = ButtonDefaults.buttonElevation(8.dp)
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF004A8F)), // Cor do botão
+            shape = RoundedCornerShape(30.dp), // Bordas arredondadas
+            elevation = ButtonDefaults.buttonElevation(8.dp) // Elevação do botão
         ) {
-            Text("Entrar")
+            Text("Entrar") // Texto do botão
         }
     }
 }
