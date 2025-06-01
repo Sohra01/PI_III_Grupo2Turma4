@@ -4,6 +4,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
@@ -14,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
@@ -239,8 +241,14 @@ fun CreateOrEditPasswordScreen(
 
                 OutlinedTextField(
                     value = nome.value,
-                    onValueChange = { nome.value = it },
+                    onValueChange = {
+                        if (it.length <= 20) {
+                            nome.value = it
+                        }
+                    },
                     label = { Text("Nome") },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -277,7 +285,11 @@ fun CreateOrEditPasswordScreen(
 
                 OutlinedTextField(
                     value = descricao.value,
-                    onValueChange = { descricao.value = it },
+                    onValueChange = {
+                        if (it.length <= 100) {
+                            descricao.value = it
+                        }
+                    },
                     label = { Text("Descrição") },
                     modifier = Modifier
                         .fillMaxWidth()

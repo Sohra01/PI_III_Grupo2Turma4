@@ -27,7 +27,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
 import com.edu.puc.pi_iii_superid.ui.theme.screens.DrawerContent
 import com.example.superid.R
@@ -48,7 +47,8 @@ fun CategoryScreen(navController: NavController) {
     val auth = FirebaseAuth.getInstance()
     val firestore = FirebaseFirestore.getInstance()
     val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
+    var emailVerificado by remember { mutableStateOf<Boolean?>(null) }
+
 
     var categorias by remember { mutableStateOf<List<Categoria>>(emptyList()) }
     var loading by remember { mutableStateOf(true) }
@@ -62,6 +62,7 @@ fun CategoryScreen(navController: NavController) {
     LaunchedEffect(Unit) {
         val user = auth.currentUser
         if (user != null) {
+            emailVerificado = user.isEmailVerified
             try {
                 val snapshot = firestore.collection("usuarios")
                     .document(user.uid)
@@ -129,21 +130,34 @@ fun CategoryScreen(navController: NavController) {
                 )
             },
             floatingActionButton = {
-                FloatingActionButton(
-                    onClick = { navController.navigate("camera") },
-                    containerColor = Color(0xFF004A8F),
-                    shape = RoundedCornerShape(50),
-                    modifier = Modifier
-                        .offset(y = 45.dp)
-                        .size(75.dp)
-                ) {
-                    Icon(
-                        Icons.Default.Fullscreen,
-                        contentDescription = "Central Action",
-                        tint = Color.White,
-                        modifier = Modifier.size(50.dp)
-                    )
-                }
+                if (emailVerificado == true) {
+                    FloatingActionButton(
+                        onClick = { navController.navigate("camera") },
+                        containerColor = Color(0xFF004A8F),
+                        shape = RoundedCornerShape(50),
+                        modifier = Modifier
+                            .offset(y = 45.dp)
+                            .size(75.dp)
+                    ) {
+                        Icon(
+                            Icons.Default.Fullscreen,
+                            contentDescription = "Central Action",
+                            tint = Color.White,
+                            modifier = Modifier.size(50.dp)
+                        )
+                    }
+                }else if (emailVerificado == null) {
+                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator()
+                    }
+                }else {
+                        Text(
+                            text = "Verifique seu e-mail",
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            modifier = Modifier.offset(y = 45.dp)
+                        )
+                    }
             },
             floatingActionButtonPosition = FabPosition.Center,
         ) { paddingValues ->

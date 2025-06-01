@@ -1,11 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Café</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f5f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #5b3924;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93");
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+    }
+
+    .section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #5b3924;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>HOME</h1>
+  <header>
+    <h1>Bella Café</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Cardápio</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+      <a id="logout">Sair</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>O sabor da elegância em cada xícara</h2>
+  </div>
+
+  <div class="section">
+    <h3>Bem-vindo ao Bella Café</h3>
+    <p>Descubra o charme de um café artesanal em um ambiente aconchegante. Servimos com carinho cafés selecionados, doces especiais e momentos únicos.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bella Café. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const userUID = sessionStorage.getItem("userUID");
+    if (!userUID) {
+      window.location.href = "index.html";
+    }
+
+    // Função de logout
+    document.getElementById("logout").addEventListener("click", () => {
+      sessionStorage.removeItem("userUID");
+      window.location.href = "index.html";
+    });
+  </script>
 </body>
 </html>

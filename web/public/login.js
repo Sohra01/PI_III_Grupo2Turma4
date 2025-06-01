@@ -13,11 +13,16 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const functions = getFunctions(app);
+const userUID = sessionStorage.getItem("userUID");
 
-let pollingInterval = null;
 let countdownInterval = null;
 let currentLoginToken = null;
 let remainingSeconds = 60;
+
+if (userUID) {
+    window.location.href = "home.html";
+}
+
 
 async function fetchQRCode() {
   try {
@@ -47,10 +52,9 @@ async function fetchQRCode() {
       `<img src="${result.qrCodeBase64}" alt="QR Code" style="width:100%; max-width:300px;" />`;
     document.getElementById("qr-modal").style.display = "flex";
 
-    // Inicia polling a cada 5s
-    pollingInterval = setInterval(checkLoginStatus, 5000);
 
     updateTimerUI();
+
     countdownInterval = setInterval(() => {
       remainingSeconds--;
       updateTimerUI();
@@ -67,9 +71,10 @@ async function fetchQRCode() {
 }
 
 async function checkLoginStatus() {
+  console.log("checkLoginStatus chamado");
   if (!currentLoginToken) return;
 
-  const response = await fetch("https://us-central1-super-6a237.cloudfunctions.net/getLoginStatus", {
+  const response = await fetch("https://us-central1-super-6a237.cloudfunctions.net/performAuth/getLoginStatus", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ loginToken: currentLoginToken }),
@@ -78,13 +83,11 @@ async function checkLoginStatus() {
   const result = await response.json();
 
   if (result.status === "success") {
-    clearInterval(pollingInterval);
     clearInterval(countdownInterval);
-    alert("Login confirmado com UID: " + result.user);
+    sessionStorage.setItem("userUID", result.user);
     closeModal();
     window.location.href = "home.html";
   } else if (result.error === "loginToken expirado" || result.error === "Número máximo de consultas excedido") {
-    clearInterval(pollingInterval);
     clearInterval(countdownInterval);
     alert("QR Code expirado ou inválido.");
     closeModal();
@@ -101,7 +104,6 @@ function closeModal() {
   document.getElementById("qr-code-image").innerHTML = "";
   document.getElementById("qr-timer").textContent = "";
   currentLoginToken = null;
-  clearInterval(pollingInterval);
   clearInterval(countdownInterval);
 }
 
@@ -110,4 +112,10 @@ document.getElementById("qr-modal-close").addEventListener("click", () => {
   document.getElementById("qr-modal").style.display = "none";
 });
 
-document.getElementById("btn-login").addEventListener("click", fetchQRCode);
+document.getElementById("btn-login").addEventListener("click", async () => {
+  await fetchQRCode();
+
+  setTimeout(() => checkLoginStatus(), 20000); 
+  setTimeout(() => checkLoginStatus(), 40000); 
+  setTimeout(() => checkLoginStatus(), 60000);
+});

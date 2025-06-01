@@ -29,6 +29,7 @@
     import androidx.compose.runtime.getValue
     import androidx.compose.runtime.setValue
     import androidx.compose.ui.platform.LocalContext
+    import androidx.compose.ui.unit.sp
     import com.google.firebase.auth.FirebaseAuth
     import com.google.firebase.firestore.FirebaseFirestore
     import kotlinx.coroutines.tasks.await
@@ -52,6 +53,7 @@
         val auth = FirebaseAuth.getInstance()
         val firestore = FirebaseFirestore.getInstance()
         val context = LocalContext.current
+        var emailVerificado by remember { mutableStateOf<Boolean?>(null) }
 
         var senhas by remember { mutableStateOf<List<Senha>>(emptyList()) }
         var loading by remember { mutableStateOf(true) }
@@ -64,6 +66,7 @@
 
         LaunchedEffect(categoria, user) {
             if (user != null) {
+                emailVerificado = user.isEmailVerified
                 loading = true
                 try {
                     val snapshot = firestore.collection("usuarios")
@@ -140,19 +143,32 @@
                     )
                 },
                 floatingActionButton = {
-                    FloatingActionButton(
-                        onClick = { /* Ação central */ },
-                        containerColor = Color(0xFF004A8F),
-                        shape = RoundedCornerShape(50),
-                        modifier = Modifier
-                            .offset(y = 55.dp)
-                            .size(65.dp)
-                    ) {
-                        Icon(
-                            Icons.Default.Fullscreen,
-                            contentDescription = "Central Action",
-                            tint = Color.White,
-                            modifier = Modifier.size(40.dp)
+                    if (emailVerificado == true) {
+                        FloatingActionButton(
+                            onClick = { navController.navigate("camera") },
+                            containerColor = Color(0xFF004A8F),
+                            shape = RoundedCornerShape(50),
+                            modifier = Modifier
+                                .offset(y = 45.dp)
+                                .size(75.dp)
+                        ) {
+                            Icon(
+                                Icons.Default.Fullscreen,
+                                contentDescription = "Central Action",
+                                tint = Color.White,
+                                modifier = Modifier.size(50.dp)
+                            )
+                        }
+                    }else if (emailVerificado == null) {
+                        Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                            CircularProgressIndicator()
+                        }
+                    }else {
+                        Text(
+                            text = "Verifique seu e-mail",
+                            color = Color.White,
+                            fontSize = 16.sp,
+                            modifier = Modifier.offset(y = 45.dp)
                         )
                     }
                 },
