@@ -1,4 +1,4 @@
-# PI_III_Grupo2
+# PI_III_Grupo2_Time4
 
 Projeto do Aplicativo de autenticação, referente ao Projeto integrador III do curso de Engenharia de Software da PUC(Pontifícia Universidade Católica)
 
